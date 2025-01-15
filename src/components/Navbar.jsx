@@ -33,18 +33,20 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`${styles.paddingX} w-full flex items-center justify-between px-6 py-4 fixed  right-1 left-1 z-20 bg-white bg-opacity-80 backdrop-blur-lg shadow-md rounded-lg border border-gray-300`}
+      className={`${styles.paddingX} w-full flex items-center justify-between px-6 py-4 fixed  right-1 left-1 z-20 bg-white bg-opacity-20 backdrop-blur-lg shadow-md rounded-lg border border-gray-300`}
     >
       <div className="w-full flex justify-between items-center max-w-7xl mx-auto">
-        <Link
-          to="/"
-          className="flex items-center gap-2 hover:opacity-80 transition-opacity duration-300"
-          onClick={() => {
-            setActive("");
-            window.scrollTo(0, 0);
-          }}>
-          <img src={logo} alt="logo" className="w-20 h-12 object-contain" />
-        </Link>
+      <Link
+  to="/"
+  className="flex items-center gap-2 hover:opacity-80 transition-opacity duration-300"
+  onClick={() => {
+    setActive("");
+    window.scrollTo(0, 0);
+  }}>
+  <span className="text-[24px] font-bold tracking-wider bg-gradient-to-r from-cyan-400 via-blue-500 to-indigo-600 text-transparent bg-clip-text">
+    MAYUR WAGH
+  </span>
+</Link>
         <ul className="list-none hidden sm:flex flex-row gap-10">
           {navLinks.map((Link) => (
             <li
@@ -52,7 +54,7 @@ const Navbar = () => {
               className={`${
                 active === Link.id 
                   ? "text-black border-b-2 border-indigo-500" 
-                  : "text-gray-600"
+                  : "text-white "
               }
               hover:text-black hover:border-b-2 hover:border-indigo-500 px-4 py-2 rounded-full text-[18px] font-medium cursor-pointer transition-all duration-300`}
             >
@@ -78,7 +80,7 @@ const Navbar = () => {
                     className={`${
                       active === Link.id 
                         ? "text-black border-b-2 border-indigo-500 w-full rounded-lg" 
-                        : "text-gray-600"
+                        : "text-gray-900"
                     } hover:text-black hover:border-b-2 hover:border-indigo-500 w-full px-4 py-3 rounded-lg text-lg md:text-xl xl:text-2xl font-medium cursor-pointer transition-all duration-300`}
                     onClick={() => {
                       setToggle(false);
