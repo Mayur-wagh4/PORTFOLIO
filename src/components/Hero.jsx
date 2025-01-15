@@ -81,6 +81,13 @@ const Hero = () => {
             >
               Get in Touch
             </a>
+            <a
+              href="/Mayur_Wagh_resume_7385360404.pdf"
+              download="Mayur_Wagh_Resume.pdf"
+              className="bg-indigo-500 px-6 py-3 rounded-full text-white font-semibold hover:scale-105 transition-transform"
+            >
+              Download Resume
+            </a>
           </div>
         </div>
       </div>
