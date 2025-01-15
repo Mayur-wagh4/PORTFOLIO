@@ -1,29 +1,27 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  @apply mx-auto p-8 text-center max-w-screen-xl;
+  background: linear-gradient(135deg, #1e293b, #0f172a); /* New background */
+  color: #f1f5f9; /* Light text for contrast */
 }
-
 
 .logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+  @apply h-24 p-6 transition-all duration-300 will-change-filter;
+  filter: drop-shadow(0 0 2em #4a90e2); /* Fresh royal blue glow */
 }
+
 .logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+  filter: drop-shadow(0 0 4em #af52de); /* Bright purple on hover */
 }
+
 .logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+  filter: drop-shadow(0 0 4em #2dcfa8); /* Teal for React hover */
 }
 
 @keyframes logo-spin {
-  from {
+  0% {
     transform: rotate(0deg);
   }
-  to {
+  100% {
     transform: rotate(360deg);
   }
 }
@@ -35,9 +33,35 @@
 }
 
 .card {
-  padding: 2em;
+  @apply p-8 rounded-xl glass-effect hover-card;
+  background: linear-gradient(135deg, rgba(74, 144, 226, 0.1), rgba(175, 82, 222, 0.1)); /* Subtle gradient */
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.card:hover {
+  @apply hover:translate-y-[-5px];
+  box-shadow: 0 12px 48px rgba(74, 144, 226, 0.5); /* Enhanced hover shadow */
+}
+
+.card h2 {
+  @apply text-xl font-semibold;
+  background: linear-gradient(135deg, #4a90e2, #af52de); /* Blue to purple text gradient */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.card p {
+  @apply mt-4 leading-relaxed;
+  color: #94a3b8; /* Softer gray text */
 }
 
 .read-the-docs {
-  color: #888;
+  @apply text-gray-500 hover:text-teal-400 transition-all;
+  color: #94a3b8; /* Neutral text */
 }
+
+.read-the-docs:hover {
+  color: #2dcfa8; /* Teal on hover */
+}
+
+
