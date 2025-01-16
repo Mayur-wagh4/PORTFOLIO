@@ -1,29 +1,42 @@
-import backend from "./backend.png";
-import carrent from "./carrent.png";
+// General Assets
+import AZURE from "./AZURE.png";
+import BESANT from "./BESANT.png";
+import CICD from "./CICD.png";
+import DEVOPS from "./DEVOPS.png";
+import DS from "./DS.png";
+import EDULEEM from "./EDULEEM.png";
+import GETTOHIRE from "./GETTOHIRE.png";
+import GTH from "./GTH.png";
+import PORTFOLIO from "./PORTFOLIO.png";
+import awsAbout from "./aws-about.png";
 import close from "./close.svg";
-import creator from "./creator.png";
+import G4G from './g4g.png';
 import github from "./github.png";
-import jobit from "./jobit.png";
-import logo from "./logo3.png";
+import jio from "./jio.png";
+import logo from "./logo.png";
 import menu from "./menu.svg";
-import mobile from "./mobile.png";
-import css from "./tech/css.png";
-import html from "./tech/html.png";
-import javascript from "./tech/javascript.png";
-import mongodb from "./tech/mongodb.png";
-import nodejs from "./tech/nodejs.png";
+import profile from './profile.jpg';
+// Tech Stack Assets
+import ansible from "./tech/ansible.png";
+import aws from "./tech/aws.png";
+import docker from "./tech/docker.png";
+import git from "./tech/git.png";
+import jenkins from "./tech/jenkins.png";
+import kubernetes from "./tech/kubernetes.png";
+import linux from "./tech/linux.png";
+import python from "./tech/python.png";
 import reactjs from "./tech/reactjs.png";
-import tailwind from "./tech/tailwind.png";
-import threejs from "./tech/threejs.svg";
-import tripguide from "./tripguide.png";
-import web from "./web.png";
+import shell from "./tech/shell.png";
+import terraform from "./tech/terraform.png";
 
+// Exporting Assets
 export {
-  backend, carrent, close, creator, css, github, html,
-  javascript, jobit, logo, menu, mobile, mongodb,
-  nodejs,
-  reactjs,
-  tailwind,
-  threejs, tripguide, web
+  ansible,
+  aws, awsAbout, AZURE,
+  BESANT, CICD, close, DEVOPS, docker, DS,
+  EDULEEM, G4G, GETTOHIRE, git, github, GTH, jenkins, jio, kubernetes,
+  linux, logo,
+  menu, PORTFOLIO, profile, python, reactjs, shell,
+  terraform
 };
 

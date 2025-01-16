@@ -14,26 +14,26 @@ function App() {
         </div>
 
         {/* About Section */}
-        <About className="bg-gradient-to-r from-blue-500 via-teal-500 to-yellow-500" />
+        <About />
 
         {/* Experience Section */}
-        <Experience className="bg-gradient-to-r from-teal-500 via-yellow-500 to-orange-500" />
+        <Experience />
 
         {/* Tech Section */}
-        <Tech className="bg-gradient-to-r from-purple-500 via-indigo-500 to-blue-500" />
+        <Tech />
 
         {/* Works Section */}
-        <Works className="bg-gradient-to-r from-pink-500 via-teal-500 to-yellow-500" />
+        <Works />
 
         {/* Skills Section */}
-        <Skill className="bg-gradient-to-r from-indigo-500 via-blue-500 to-teal-500" />
+        <Skill/>
 
         {/* Certifications Section */}
-        <Certifications className="bg-gradient-to-r from-orange-500 via-pink-500 to-purple-500" />
+        <Certifications  />
 
         <div className="relative z-0">
           {/* Contact Section */}
-          <Contact className="bg-gradient-to-r from-teal-500 via-blue-500 to-indigo-500" />
+          <Contact />
           {/* Stars Canvas */}
           <StarsCanvas />
         </div>

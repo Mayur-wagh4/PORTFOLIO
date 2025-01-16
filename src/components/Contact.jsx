@@ -1,4 +1,3 @@
-import emailjs from '@emailjs/browser';
 import { motion } from 'framer-motion';
 import React, { useRef, useState } from 'react';
 import { SectionWrapper } from '../hoc';
@@ -25,34 +24,17 @@ const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setLoading(true);
-    emailjs
-      .send(
-        'service_238b4y5',
-        'template_cqn04be',
-        {
-          from_name: form.name,
-          to_name: 'Mayur Wagh',
-          to_email: 'mayurwagh2001@gmail.com',
-          message: form.message,
-        },
-        'xjcwe3n0_deRDjvlT'
-      )
-      .then(
-        () => {
-          setLoading(false);
-          setIsSubmitted(true);
-          setForm({
-            name: '',
-            email: '',
-            message: '',
-          });
-        },
-        (error) => {
-          setLoading(false);
-          console.log(error);
-          alert('Something Went Wrong.');
-        }
-      );
+
+    // Simulate a delay for the form submission
+    setTimeout(() => {
+      setLoading(false);
+      setIsSubmitted(true);
+      setForm({
+        name: '',
+        email: '',
+        message: '',
+      });
+    }, 1000); // You can change this delay time if needed
   };
 
   return (
@@ -103,7 +85,7 @@ const Contact = () => {
           </label>
           <button
             type="submit"
-            className="bg-gradient-to-r from-teal-500 to-blue-600 py-3 px-8 outline-none w-fit text-white font-bold shadow-lg shadow-teal-300 rounded-xl hover:scale-105 transition-transform"
+            className="bg-gradient-to-r  from-teal-500 to-blue-600 py-3 px-8 outline-none w-fit text-white font-bold shadow-lg shadow-teal-300 rounded-xl hover:scale-105 transition-transform"
           >
             {loading ? 'Sending...' : 'Send'}
           </button>

@@ -17,6 +17,7 @@ const ExperienceCard = ({ experience }) => (
       boxShadow: '0 0 15px rgba(0, 255, 255, 0.5)', // Glowing effect around the card
       border: '2px solid transparent', // Making the border transparent
       backgroundClip: 'padding-box', // To ensure the border glow is outside the card content
+      overflow:'hidden',
     }}
     contentArrowStyle={{
       borderRight: '7px solid #4b5967', // Subtle arrow color that complements the background
@@ -56,7 +57,7 @@ const Experience = () => {
         <p className={`${styles.sectionSubText} text-center text-gray-400`}>What I have done so far</p>
         <h2 className={`${styles.sectionHeadText} text-center text-white`}>Work Experience.</h2>
       </motion.div>
-      <div className="mt-20 flex flex-col p-10 rounded-lg shadow-lg ">
+      <div className="mt-20 flex flex-col p-10 overflow-hidden rounded-lg shadow-lg ">
         <VerticalTimeline>
           {experiences.map((experience, index) => (
             <ExperienceCard key={index} experience={experience} />

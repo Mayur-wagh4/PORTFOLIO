@@ -11,7 +11,7 @@ import { styles } from "../styles";
 import { fadeIn, textVariant } from "../utils/motion";
 
 const ServiceCard = ({ index, title, icon }) => (
-  <Tilt className="xs:w-[250px] w-full">
+  <Tilt className="xs:w-[250px] w-full ">
     <motion.div
       variants={fadeIn("right", "spring", index * 0.5, 0.75)}
       className="w-full bg-gradient-to-r from-indigo-500 to-purple-500 p-[1px] rounded-[20px] shadow-lg shadow-indigo-500/20"
@@ -72,7 +72,7 @@ const About = () => {
         by combining technical expertise with a commitment to continuous
         improvement.
       </motion.p>
-      <div className="mt-20 flex flex-wrap gap-10">
+      <div className="mt-20 overflow-hidden flex flex-wrap gap-10">
         {services.map((service, index) => (
           <ServiceCard key={service.title} index={index} {...service} />
         ))}

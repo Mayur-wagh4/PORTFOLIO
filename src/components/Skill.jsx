@@ -1,10 +1,10 @@
 // eslint-disable-next-line no-unused-vars
-import { motion } from 'framer-motion';
-import React from 'react';
+import { motion } from "framer-motion";
+import React from "react";
 import { Skills } from "../constants/constants";
-import { SectionWrapper } from '../hoc';
-import { styles } from '../styles';
-import { fadeIn, textVariant } from '../utils/motion';
+import { SectionWrapper } from "../hoc";
+import { styles } from "../styles";
+import { fadeIn, textVariant } from "../utils/motion";
 
 const SkillCard = ({ index, name, level }) => (
   <motion.div
@@ -33,7 +33,7 @@ const SkillCard = ({ index, name, level }) => (
 
     {/* Render level text below the bar */}
     <p className="mt-3 text-gray-600 font-semibold text-center">{name}</p>
-    <p className="text-center text-gray-800 text-sm">{level}</p>
+    <p className="text-center text-gray-400 text-sm">{level}</p>
   </motion.div>
 );
 
@@ -43,12 +43,18 @@ const Skill = () => {
       <div className="mt-12  rounded-[20px]">
         <div className={`${styles.padding}  rounded-2xl min-h-[300px]`}>
           <motion.div variants={textVariant()}>
-            <p className={`${styles.sectionSubText} text-center text-gray-400`}>Skills</p>
-            <h2 className={`${styles.sectionHeadText} text-center text-white`}>Technical Skills</h2>
+            <p className={`${styles.sectionSubText} text-center text-gray-400`}>
+              Skills
+            </p>
+            <h2 className={`${styles.sectionHeadText} text-center text-white`}>
+              Technical Skills
+            </h2>
           </motion.div>
         </div>
 
-        <div className={`${styles.paddingX} -mt-20 pb-14 flex flex-wrap gap-7 justify-center`}>
+        <div
+          className={`${styles.paddingX} -mt-20 pb-14 flex flex-wrap gap-7 justify-center`}
+        >
           {Skills.map((skill, index) => (
             <SkillCard key={skill.name} index={index} {...skill} />
           ))}
