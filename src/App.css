@@ -1,5 +1,5 @@
 #root {
-  @apply mx-auto p-8 text-center max-w-screen-xl;
+  @apply mx-auto p-8 text-center max-w-6xl;
   background: linear-gradient(135deg, #1e293b, #0f172a); /* New background */
   color: #f1f5f9; /* Light text for contrast */
 }

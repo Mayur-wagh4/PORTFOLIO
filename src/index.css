@@ -11,6 +11,9 @@
   font-family: "Inter", sans-serif;
   scroll-behavior: smooth;
   color-scheme: dark;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS devices */
+
 }
 
 /* Modern Gradient Text */
@@ -20,6 +23,9 @@
   background-clip: text;
   color: transparent;
   animation: gradient-shift 8s ease infinite;
+}
+*::-webkit-scrollbar {
+  display: none;
 }
 
 @keyframes gradient-shift {
