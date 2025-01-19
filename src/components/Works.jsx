@@ -6,7 +6,6 @@ import React from "react";
 import { Tilt } from "react-tilt";
 import { github } from "../assets";
 import { projects } from "../constants/constants";
-import { SectionWrapper } from "../hoc";
 import { styles } from "../styles";
 import { fadeIn, textVariant } from "../utils/motion";
 
@@ -26,7 +25,7 @@ const ProjectCard = ({
         scale: 1,
         speed: 450,
       }}
-      className="bg-white overflow-hidden  p-5 min-h-100vh rounded-2xl  sm:w-[360px] w-full shadow-lg "
+      className="bg- overflow-hidden  p-5 min-h-100vh rounded-2xl  sm:w-[360px] w-full shadow-lg "
     >
       <div
         className="relative w-full overflow-hidden h-[230px] cursor-pointer"
@@ -52,10 +51,10 @@ const ProjectCard = ({
       </div>
 
       <div className="mt-5">
-        <h3 className="text-gray-600 font-bold overflow-hidden text-[24px]">
+        <h3 className="text-white  font-bold overflow-hidden text-[24px]">
           {name}
         </h3>
-        <p className="mt-2 text-black overflow-hidden  text-[14px]">
+        <p className="mt-2 text-white overflow-hidden  text-[14px]">
           {description}
         </p>
       </div>
@@ -105,4 +104,4 @@ const Works = () => {
   );
 };
 
-export default SectionWrapper(Works, "work");
+export default Works;

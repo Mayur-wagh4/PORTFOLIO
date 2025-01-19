@@ -1,8 +1,10 @@
+/* Google Font Import */
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
+/* Global Reset */
 * {
   margin: 0;
   padding: 0;
@@ -11,19 +13,45 @@
   scroll-behavior: smooth;
   color-scheme: dark;
   overflow-x: hidden;
-  -webkit-overflow-scrolling: touch;
 }
 
-::-webkit-scrollbar {
-  display: none;
+html {
+  scroll-padding-top: 80px;
 }
 
 body {
   -ms-overflow-style: none;
-  scrollbar-width: none;
-  overflow-x: hidden;
+  scrollbar-width: none; /* Hide native scrollbar */
 }
 
+/* Scrollbar customization */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(59, 130, 246, 0.5);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(59, 130, 246, 0.7);
+}
+
+/* Glassmorphism Effect */
+.glass-effect {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+  border-radius: 12px;
+}
+
+/* Text Gradient */
 .text-gradient {
   background: linear-gradient(135deg, #3B82F6, #10B981, #F97316);
   -webkit-background-clip: text;
@@ -36,31 +64,16 @@ body {
   50% { background-position: 100% 50%; }
 }
 
-.glass-effect {
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
-  border-radius: 12px;
-}
-
-.glass-card {
-  @apply glass-effect rounded-xl transition-transform duration-300;
-}
-
-.glass-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 40px rgba(31, 38, 135, 0.45);
-}
-
+/* Gradient Variants */
 .modern-gradient {
   background: linear-gradient(135deg, rgba(59, 130, 246, 0.15), rgba(16, 185, 129, 0.15), rgba(249, 115, 22, 0.15));
 }
 
 .violet-gradient {
-  background: linear-gradient(145deg, #3B82F6, #10B981, rgba(139, 92, 246, 0));
+  background: linear-gradient(145deg, #3B82F6, #10B981);
 }
 
+/* Gradient Text */
 .text-gradient-common {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -75,12 +88,13 @@ body {
   @apply text-gradient-common;
 }
 
+/* Modern Button */
 .modern-button {
-  @apply px-6 py-3 rounded-full font-medium transition-all duration-300;
-  @apply bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500;
+  @apply px-6 py-3 rounded-full font-medium transition-all duration-300 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500;
   @apply hover:shadow-lg hover:shadow-purple-500/25 hover:scale-105;
 }
 
+/* Animated Border */
 .animated-border {
   position: relative;
   background: linear-gradient(45deg, #3B82F6, #10B981, #F97316);
@@ -100,6 +114,7 @@ body {
   50% { background-position: 100% 50%; }
 }
 
+/* Loader Animation */
 .modern-loader {
   width: 40px;
   height: 40px;
@@ -113,33 +128,40 @@ body {
   to { transform: rotate(360deg); }
 }
 
-::-webkit-scrollbar-track { background: rgba(255, 255, 255, 0.05); }
-::-webkit-scrollbar-thumb { background: rgba(59, 130, 246, 0.5); border-radius: 4px; }
-::-webkit-scrollbar-thumb:hover { background: rgba(59, 130, 246, 0.7); }
-
+/* Section Padding */
 .section-padding { @apply py-16 md:py-24; }
+
+/* Section Heading */
 .section-heading { @apply text-4xl md:text-5xl font-bold mb-8; }
+
+/* Card Grid */
 .card-grid { @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6; }
-.nav-link { @apply relative px-4 py-2 text-gray-300 hover:text-white transition-colors duration-300; }
-.nav-link:hover::after { @apply w-full; }
+
+/* Navigation Link Styling */
+.nav-link {
+  position: relative;
+}
+
+.nav-link:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background: #fff;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover:after {
+  width: 100%;
+}
+
+/* Custom Container */
 .container-custom { @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8; }
 
+/* Timeline Element Styling */
 .vertical-timeline-element-content {
   position: relative;
   transition: all 0.3s ease-in-out;
-}
-
-.vertical-timeline-element-content::before {
-  content: '';
-  position: absolute;
-  inset: -2px;
-  background: linear-gradient(90deg, transparent 0%, transparent 40%, #ffffff 45%, #ffffff 55%, transparent 60%, transparent 100%);
-  background-size: 300% 100%;
-  border-radius: 12px;
-  animation: border-dance 3s linear infinite;
-  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  mask-composite: exclude;
-  pointer-events: none;
 }
 
 .vertical-timeline-element-content:hover {
@@ -147,8 +169,60 @@ body {
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
 }
 
+/* Tesla Font */
 .font-tesla {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   letter-spacing: 0.1em;
   font-weight: 600;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.vertical-timeline::before {
+  background: rgba(94, 234, 212, 0.2);
+}
+
+.vertical-timeline-element-date {
+  color: rgb(94, 234, 212) !important;
+  font-weight: 500 !important;
+  font-size: 14px !important;
+  opacity: 1 !important;
+}
+
+@media only screen and (min-width: 1170px) {
+  .vertical-timeline-element-date {
+    font-size: 16px !important;
+  }
+}
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(94, 234, 212, 0.5);
+  border-radius: 2px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(94, 234, 212, 0.7);
+}
+
+.vertical-timeline-element-icon {
+  box-shadow: none !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+.vertical-timeline-element-content {
+  box-shadow: none !important;
+  overflow: hidden !important;
+}
+
+.vertical-timeline-element-content-arrow {
+  filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.1));
 }

@@ -1,13 +1,14 @@
 import {
   AZURE,
   BESANT,
-  CICD,
   DEVOPS,
   EDULEEM,
   G4G,
   GETTOHIRE,
   GTH,
   PORTFOLIO,
+  ansible,
+  aws,
   awsAbout,
   aws as awsIcon,
   docker,
@@ -15,15 +16,16 @@ import {
   jenkins,
   jio,
   kubernetes,
+  python,
   reactjs,
   terraform
 } from "../assets";
 
 export const navLinks = [
   { id: "about", title: "About" },
-  { id: "skills", title: "Skills" },
-  { id: "projects", title: "Projects" },
   { id: "experience", title: "Experience" },
+  { id: "projects", title: "Projects" },
+  { id: "skills", title: "Skills" },
   { id: "certifications", title: "Certifications" },
   { id: "contact", title: "Contact" },
 ];
@@ -80,7 +82,7 @@ export const certifications = [
 const services = [
   { title: "DevOps Engineer", icon: DEVOPS },
   { title: "Cloud Architect", icon: awsAbout },
-  { title: "CI/CD Specialist", icon: CICD },
+  // { title: "CI/CD Specialist", icon: CICD },
   { title: "Frontend Developer", icon: reactjs },
 ];
 
@@ -106,7 +108,6 @@ const experiences = [
       "Developed CI/CD pipelines using Jenkins, Docker, and Terraform to streamline deployments.",
       "Integrated ELK Stack for enhanced monitoring and system reliability.",
       "Achieved 99.9% uptime and reduced deployment time by 70%.",
-      "Implemented configuration management using Ansible for seamless updates.",
     ],
   },
   {
@@ -125,15 +126,15 @@ const experiences = [
 ];
 
 const Skills = [
-  { name: "AWS", level: "expert" },
-  { name: "React", level: "intermediate" },
-  { name: "Docker", level: "expert" },
-  { name: "Kubernetes", level: "expert" },
-  { name: "Jenkins", level: "intermediate" },
-  { name: "Terraform", level: "intermediate" },
-  { name: "Python", level: "intermediate" },
-  { name: "Ansible", level: "intermediate" },
-  { name: "Git", level: "intermediate" },
+  { name: "AWS", level: "expert",icon:aws },
+  { name: "React", level: "intermediate" ,icon:reactjs},
+  { name: "Docker", level: "expert",icon:docker },
+  { name: "Kubernetes", level: "expert",icon:kubernetes },
+  { name: "Jenkins", level: "intermediate", icon:jenkins },
+  { name: "Terraform", level: "intermediate",icon:terraform },
+  { name: "Python", level: "intermediate",icon:python },
+  { name: "Ansible", level: "intermediate" ,icon:ansible},
+  { name: "Git", level: "intermediate",icon:git },
 ];
 
 const projects = [
