@@ -1,5 +1,5 @@
 import React from "react";
-import { profile } from '../assets/index.js';
+import { profile } from "../assets/index.js";
 
 const Hero = () => {
   return (
@@ -16,7 +16,8 @@ const Hero = () => {
             </h1>
 
             <p className="text-base sm:text-lg lg:text-xl text-gray-300 text-center md:text-left max-w-2xl leading-relaxed">
-              DevOps Engineer and Frontend Developer specializing in AWS cloud services and CI/CD automation.
+              DevOps Engineer and Frontend Developer specializing in AWS cloud
+              services and CI/CD automation.
             </p>
 
             <p className="text-lg sm:text-xl lg:text-2xl text-teal-300 font-medium text-center md:text-left">
@@ -30,16 +31,16 @@ const Hero = () => {
               >
                 Projects
               </a>
-              
+
               <a
                 href="#contact"
                 className="px-6 py-3 text-base lg:text-lg rounded-lg border-2 border-teal-400 text-teal-400 hover:bg-teal-400 hover:text-white transform hover:scale-105 transition-transform duration-200 shadow-lg hover:shadow-teal-400/25"
               >
                 Contact
               </a>
-              
+
               <a
-                href="/mayur_resume.pdf"
+                href="/mayur_resume.pdf" // Correct path to the file in the public folder
                 download
                 className="px-6 py-3 text-base lg:text-lg rounded-lg bg-indigo-600 text-white hover:opacity-90 transform hover:scale-105 transition-transform duration-200 shadow-lg hover:shadow-indigo-600/25"
               >
@@ -50,13 +51,12 @@ const Hero = () => {
 
           {/* Right Side - Image */}
           <div className="w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 lg:w-64 lg:h-64 xl:w-72 xl:h-72 mb-6 md:mb-0 relative overflow-hidden">
-  <img
-    src={profile}
-    alt="Mayur Wagh"
-    className="w-full h-full object-cover rounded-full border-4 border-teal-400 shadow-xl hover:shadow-teal-400/50 transition-shadow duration-300"
-  />
-</div>
-
+            <img
+              src={profile}
+              alt="Mayur Wagh"
+              className="w-full h-full object-cover rounded-full border-4 border-teal-400 shadow-xl hover:shadow-teal-400/50 transition-shadow duration-300"
+            />
+          </div>
         </div>
       </div>
     </main>
