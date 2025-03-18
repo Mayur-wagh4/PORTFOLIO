@@ -1,6 +1,7 @@
 import {
   AZURE,
   BESANT,
+  CICD,
   DEVOPS,
   EDULEEM,
   G4G,
@@ -16,7 +17,6 @@ import {
   jenkins,
   jio,
   kubernetes,
-  python,
   reactjs,
   terraform
 } from "../assets";
@@ -125,59 +125,146 @@ const experiences = [
   },
 ];
 
+// Enhanced Skills array with additional relevant skills
 const Skills = [
-  { name: "AWS", level: "expert",icon:aws },
-  { name: "React", level: "intermediate" ,icon:reactjs},
-  { name: "Docker", level: "expert",icon:docker },
-  { name: "Kubernetes", level: "expert",icon:kubernetes },
-  { name: "Jenkins", level: "intermediate", icon:jenkins },
-  { name: "Terraform", level: "intermediate",icon:terraform },
-  { name: "Python", level: "intermediate",icon:python },
-  { name: "Ansible", level: "intermediate" ,icon:ansible},
-  { name: "Git", level: "intermediate",icon:git },
+  { name: "AWS", level: "expert", icon: aws },
+  { name: "Docker", level: "expert", icon: docker },
+  { name: "Kubernetes", level: "expert", icon: kubernetes },
+  { name: "Terraform", level: "expert", icon: terraform },
+  { name: "Jenkins", level: "intermediate", icon: jenkins },
+  { name: "Ansible", level: "intermediate", icon: ansible },
+  { name: "Git", level: "intermediate", icon: git },
+  { name: "CI/CD", level: "expert", icon: CICD },
+  { name: "GitHub Actions", level: "intermediate", icon: git },
+  // { name: "Prometheus", level: "intermediate", icon: prometheus },
+  // { name: "Grafana", level: "intermediate", icon: grafana },
+  { name: "ELK Stack", level: "intermediate", icon: aws },
+  // { name: "SonarQube", level: "intermediate", icon: sonarqube }
 ];
 
 const projects = [
   {
     name: "GetToHire.com",
     description:
-      "Dynamic job portal built on a client-server architecture using React for the frontend and Node.js for the backend. Hosted on AWS EC2 with MongoDB as the database, the platform features CI/CD pipelines using Jenkins and Docker for seamless deployment.",
+      "Dynamic job portal built on React and Node.js, hosted on AWS EC2 with MongoDB, featuring CI/CD with Jenkins and Docker.",
     tags: [
       { name: "AWS", color: "blue-text-gradient" },
       { name: "Jenkins", color: "purple-text-gradient" },
       { name: "MongoDB", color: "orange-text-gradient" },
+      { name: "React", color: "green-text-gradient" },
+      { name: "Node.js", color: "pink-text-gradient" },
     ],
     image: GETTOHIRE,
-    source_code_link: "https://github.com/Mayur-wagh4/",
+    source_code_link: "https://github.com/Mayur-wagh4/GetToHire",
     website_link: "http://www.gettohire.com/",
-  },
-  {
-    name: "Get4Grow.com",
-    description:
-      "Static website designed to provide business growth services, hosted on AWS S3 with highly optimized performance. Built with React for a modern UI, the project includes automated CI/CD pipelines using GitHub Actions to streamline deployments.",
-    tags: [
-      { name: "AWS", color: "blue-text-gradient" },
-      { name: "React", color: "purple-text-gradient" },
-      { name: "CI/CD", color: "pink-text-gradient" },
-    ],
-    image: G4G,
-    source_code_link: "https://github.com/Mayur-wagh4/",
-    website_link: "http://www.get4grow.com/",
   },
   {
     name: "Mayurwagh.in",
     description:
-      "A personal portfolio website showcasing skills, projects, and certifications. Built using React and hosted on AWS Amplify for robust and scalable deployment. The website includes an automated update pipeline triggered by Git pushes.",
+      "A personal portfolio website showcasing skills, projects, and certifications. Built using React and hosted on AWS Amplify for robust, scalable deployment.",
     tags: [
       { name: "React", color: "blue-text-gradient" },
-      { name: "AWSAmplify", color: "purple-text-gradient" },
-      { name: "Jest", color: "pink-text-gradient" },
+      { name: "AWS Amplify", color: "purple-text-gradient" },
+      { name: "CI/CD", color: "pink-text-gradient" },
+      { name: "Portfolio", color: "green-text-gradient" },
+      { name: "JavaScript", color: "orange-text-gradient" },
     ],
     image: PORTFOLIO,
-    source_code_link: "https://github.com/Mayur-wagh4/",
+    source_code_link: "https://github.com/Mayur-wagh4/Porfolio",
     website_link: "https://mayurwagh.in/",
   },
+  {
+    name: "Get4Grow.com",
+    description:
+      "Static React website hosted on AWS S3 with CloudFront CDN, CI/CD automation via AWS CodePipeline, and CloudFormation-based infrastructure management.",
+    tags: [
+      { name: "AWS", color: "blue-text-gradient" },
+      { name: "React", color: "purple-text-gradient" },
+      { name: "CloudFormation", color: "pink-text-gradient" },
+      { name: "CloudFront", color: "green-text-gradient" },
+      { name: "AWS CodePipeline", color: "orange-text-gradient" },
+    ],
+    image: G4G,
+    source_code_link: "https://github.com/Mayur-wagh4/Get4Grow",
+    website_link: "http://www.get4grow.com/",
+  },
+  {
+    name: "EKS-InfraManager",
+    description:
+      "Automates the deployment of an AWS EKS cluster using Terraform, ensuring a scalable and production-ready Kubernetes environment with IAM roles, ALB integration, and CloudWatch monitoring.",
+    tags: [
+      { name: "Terraform", color: "blue-text-gradient" },
+      { name: "AWS EKS", color: "purple-text-gradient" },
+      { name: "Kubernetes", color: "orange-text-gradient" },
+      { name: "CloudWatch", color: "pink-text-gradient" },
+      { name: "IAM", color: "green-text-gradient" },
+    ],
+    image: kubernetes,
+    source_code_link: "https://github.com/Mayur-wagh4/EKS-InfraManager",
+    website_link: "https://github.com/Mayur-wagh4/EKS-InfraManager",
+  },
+  {
+    name: "CloudScaleApp-EKS",
+    description:
+      "Deploys a three-tier web application on AWS EKS using Kubernetes with a React frontend, Node.js backend, and MongoDB. Features CI/CD, autoscaling, and ALB integration.",
+    tags: [
+      { name: "Kubernetes", color: "blue-text-gradient" },
+      { name: "AWS EKS", color: "purple-text-gradient" },
+      { name: "CI/CD", color: "pink-text-gradient" },
+      { name: "React", color: "green-text-gradient" },
+      { name: "MongoDB", color: "orange-text-gradient" },
+    ],
+    image: kubernetes,
+    source_code_link: "https://github.com/Mayur-wagh4/CloudScaleApp-EKS",
+    website_link: "https://github.com/Mayur-wagh4/CloudScaleApp-EKS",
+  },
+  {
+    name: "InfraPro-Terraform",
+    description:
+      "Infrastructure as Code (IaC) project automating AWS resource provisioning, including EC2, RDS, S3, and VPC networking using Terraform.",
+    tags: [
+      { name: "Terraform", color: "blue-text-gradient" },
+      { name: "AWS", color: "purple-text-gradient" },
+      { name: "Cloud Infrastructure", color: "orange-text-gradient" },
+      { name: "EC2", color: "green-text-gradient" },
+      { name: "RDS", color: "pink-text-gradient" },
+    ],
+    image: terraform,
+    source_code_link: "https://github.com/Mayur-wagh4/InfraPro-Terraform",
+    website_link: "https://github.com/Mayur-wagh4/InfraPro-Terraform",
+  },
+  {
+    name: "SecureNode-CI-CD",
+    description:
+      "A CI/CD pipeline for a Node.js application using Jenkins and GitHub Actions, incorporating Docker, security scanning with SonarQube, and automated Kubernetes deployments.",
+    tags: [
+      { name: "CI/CD", color: "blue-text-gradient" },
+      { name: "Jenkins", color: "purple-text-gradient" },
+      { name: "Docker", color: "orange-text-gradient" },
+      { name: "SonarQube", color: "green-text-gradient" },
+      { name: "GitHub Actions", color: "pink-text-gradient" },
+    ],
+    image: CICD,
+    source_code_link: "https://github.com/Mayur-wagh4/SecureNode-CI-CD",
+    website_link: "https://github.com/Mayur-wagh4/SecureNode-CI-CD",
+  },
+  {
+    name: "K8s-MonitoringStack",
+    description:
+      "Comprehensive Kubernetes observability stack using Prometheus, Grafana, and cAdvisor for real-time monitoring, alerting, and performance visualization.",
+    tags: [
+      { name: "Kubernetes", color: "blue-text-gradient" },
+      { name: "Prometheus", color: "purple-text-gradient" },
+      { name: "Grafana", color: "orange-text-gradient" },
+      { name: "cAdvisor", color: "green-text-gradient" },
+      { name: "Monitoring", color: "pink-text-gradient" },
+    ],
+    image: kubernetes,
+    source_code_link: "https://github.com/Mayur-wagh4/K8s-MonitoringStack",
+    website_link: "https://github.com/Mayur-wagh4/K8s-MonitoringStack",
+  }
 ];
+
 
 export { Skills, experiences, projects, services, technologies };
 

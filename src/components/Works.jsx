@@ -25,10 +25,10 @@ const ProjectCard = ({
         scale: 1,
         speed: 450,
       }}
-      className="bg- overflow-hidden  p-5 min-h-100vh rounded-2xl  sm:w-[360px] w-full shadow-lg "
+      className="bg- p-5 rounded-2xl sm:w-[360px] w-full shadow-lg flex flex-col h-[500px]"
     >
       <div
-        className="relative w-full overflow-hidden h-[230px] cursor-pointer"
+        className="relative w-full h-[180px] cursor-pointer"
         onClick={() => window.open(website_link, "_blank")}
       >
         <img
@@ -38,7 +38,10 @@ const ProjectCard = ({
         />
         <div className="absolute inset-0 flex justify-end m-3 card-img_hover">
           <div
-            onClick={() => window.open(source_code_link, "_blank")}
+            onClick={(e) => {
+              e.stopPropagation();
+              window.open(source_code_link, "_blank");
+            }}
             className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer"
           >
             <img
@@ -50,21 +53,26 @@ const ProjectCard = ({
         </div>
       </div>
 
-      <div className="mt-5">
-        <h3 className="text-white  font-bold overflow-hidden text-[24px]">
+      <div className="mt-5 flex-grow">
+        <h3 className="text-white font-bold text-[20px] line-clamp-1">
           {name}
         </h3>
-        <p className="mt-2 text-white overflow-hidden  text-[14px]">
+        <p className="mt-2 text-white text-[14px] line-clamp-4">
           {description}
         </p>
       </div>
 
-      <div className="mt-4 flex flex-wrap gap-2">
-        {tags.map((tag) => (
-          <p key={`${name}-${tag.name}`} className={`text-[14px] ${tag.color}`}>
-            #{tag.name}
-          </p>
-        ))}
+      <div className="mt-auto pt-3">
+        <div className="flex flex-wrap gap-2">
+          {tags.slice(0, 10).map((tag) => (
+            <span
+              key={`${name}-${tag.name}`}
+              className={`text-[12px] ${tag.color} px-2 py-1 rounded-full bg-opacity-20 bg-white text-red-500 inline-block`}
+            >
+              #{tag.name}
+            </span>
+          ))}
+        </div>
       </div>
     </Tilt>
   </motion.div>
@@ -72,10 +80,10 @@ const ProjectCard = ({
 
 const Works = () => {
   return (
-    <section id="projects" className="overflow-hidden">
+    <section id="projects" className="py-10">
       <motion.div variants={textVariant()} className="text-center">
         <p className={`${styles.sectionSubText} text-gray-400`}>
-          Check out some of my projects.
+          Check out some of my projects
         </p>
         <h2 className={`${styles.sectionHeadText} text-white`}>Artifacts.</h2>
       </motion.div>
@@ -85,17 +93,11 @@ const Works = () => {
           variants={fadeIn("", "", 0.1, 1)}
           className="text-gray-200 text-[17px] max-w-3xl leading-[30px] text-center"
         >
-          These projects are more than just mere examples – they're vibrant
-          representations of my expertise and innovation. With captivating
-          descriptions and accessible links to code repositories and live demos,
-          they invite you to delve into the heart of my work. Through these
-          projects, I demonstrate not only my ability to solve complex problems
-          but also my flair for creative solutions and effective project
-          management.
+          These projects showcase my expertise in solving complex problems with creative solutions and effective project management. Explore code repositories and live demos to see my work in action.
         </motion.p>
       </div>
 
-      <div className="mt-16 flex flex-wrap justify-center gap-7">
+      <div className="mt-12 flex flex-wrap justify-center gap-7">
         {projects.map((project, index) => (
           <ProjectCard key={`project-${index}`} index={index} {...project} />
         ))}
