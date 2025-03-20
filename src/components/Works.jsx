@@ -25,7 +25,7 @@ const ProjectCard = ({
         scale: 1,
         speed: 450,
       }}
-      className="bg- p-5 rounded-2xl sm:w-[360px] w-full shadow-lg flex flex-col h-[500px]"
+      className="bg-black p-5 rounded-2xl sm:w-[360px] w-full shadow-lg flex flex-col h-[500px] border border-gray-800 hover:border-gray-500 transition"
     >
       <div
         className="relative w-full h-[180px] cursor-pointer"
@@ -36,7 +36,7 @@ const ProjectCard = ({
           alt="project_image"
           className="w-full h-full object-cover rounded-2xl"
         />
-        <div className="absolute inset-0 flex justify-end m-3 card-img_hover">
+        <div className="absolute inset-0 flex justify-end m-3">
           <div
             onClick={(e) => {
               e.stopPropagation();
@@ -57,7 +57,7 @@ const ProjectCard = ({
         <h3 className="text-white font-bold text-[20px] line-clamp-1">
           {name}
         </h3>
-        <p className="mt-2 text-white text-[14px] line-clamp-4">
+        <p className="mt-2 text-gray-300 text-[14px] line-clamp-4">
           {description}
         </p>
       </div>
@@ -67,7 +67,7 @@ const ProjectCard = ({
           {tags.slice(0, 10).map((tag) => (
             <span
               key={`${name}-${tag.name}`}
-              className={`text-[12px] ${tag.color} px-2 py-1 rounded-full bg-opacity-20 bg-white text-red-500 inline-block`}
+              className={`text-[12px] ${tag.color} px-2 py-1 rounded-full bg-opacity-20 bg-white text-blue-400 inline-block`}
             >
               #{tag.name}
             </span>
@@ -83,9 +83,9 @@ const Works = () => {
     <section id="projects" className="py-10">
       <motion.div variants={textVariant()} className="text-center">
         <p className={`${styles.sectionSubText} text-gray-400`}>
-          Check out some of my projects
+          🚀 Scalable, Secure & Automated Solutions
         </p>
-        <h2 className={`${styles.sectionHeadText} text-white`}>Artifacts.</h2>
+        <h2 className={`${styles.sectionHeadText} text-white`}>DevOps & React Projects</h2>
       </motion.div>
 
       <div className="w-full flex justify-center mt-5">
@@ -93,7 +93,8 @@ const Works = () => {
           variants={fadeIn("", "", 0.1, 1)}
           className="text-gray-200 text-[17px] max-w-3xl leading-[30px] text-center"
         >
-          These projects showcase my expertise in solving complex problems with creative solutions and effective project management. Explore code repositories and live demos to see my work in action.
+          These projects showcase my expertise in **DevOps best practices, cloud-native solutions, and modern React development.**  
+          From **automated CI/CD pipelines, containerized applications, and Kubernetes deployments** to **optimized frontend performance and dynamic UI/UX**, each project is built for **scalability, security, and reliability** in production environments.
         </motion.p>
       </div>
 

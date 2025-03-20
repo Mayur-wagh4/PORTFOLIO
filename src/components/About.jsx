@@ -2,21 +2,18 @@ import React from "react";
 import { services } from "../constants/constants";
 
 const ServiceCard = ({ title, icon }) => (
-  <div className="w-full max-w-[250px] transform transition-transform hover:scale-105">
-    <div className="w-full bg-gradient-to-r from-teal-500 to-blue-500 p-[1px] rounded-lg shadow-lg">
-      <div className="bg-white rounded-lg py-5 px-12 min-h-[280px] flex justify-evenly items-center flex-col">
-        <img
-          src={icon}
-          alt={title}
-          className="w-16 h-16 object-contain"
-        />
-        <h3 className="text-gray-800 text-xl font-semibold text-center">
-          {title}
-        </h3>
+  <div className="w-full max-w-[220px] transform transition-transform hover:scale-105">
+    <div className="bg-gradient-to-r from-teal-500 to-blue-500 p-[1px] rounded-lg shadow-md">
+      <div className="bg-white rounded-lg py-4 px-6 min-h-[180px] flex flex-col items-center justify-center">
+        <img src={icon} alt={title} className="w-12 h-12 object-contain mb-3" />
+        <h3 className="text-gray-800 text-lg font-medium text-center">{title}</h3>
       </div>
     </div>
   </div>
 );
+
+
+
 
 const About = () => {
   return (
@@ -24,34 +21,21 @@ const About = () => {
       <div className="max-w-5xl mx-auto">
         {/* Header */}
         <div>
-          <p className="text-teal-300 text-lg">Introduction</p>
-          <h2 className="text-3xl md:text-4xl font-bold text-white mt-2">Overview</h2>
+          <p className="text-teal-300 text-lg">DevOps Expertise</p>
+          <h2 className="text-3xl md:text-4xl font-bold text-white mt-2">Infrastructure & Automation Specialist</h2>
         </div>
 
         {/* Content */}
         <p className="mt-8 text-gray-300 text-base sm:text-lg max-w-3xl leading-relaxed">
-          I&apos;m Mayur Prakash Wagh, a DevOps Engineer with hands-on experience
-          in deploying scalable platforms and optimizing operations. At
-          GetToHire.com, I designed and hosted a React-based platform on AWS EC2,
-          developed CI/CD pipelines using Jenkins, Docker, and Terraform, and
-          reduced deployment time by 70%. I also ensured 99.9% system uptime by
-          integrating the ELK Stack for monitoring and reliability while
-          implementing Ansible for seamless configuration management.
+          I'm Mayur Prakash Wagh, a DevOps Engineer specializing in cloud infrastructure, CI/CD automation, and containerization. With expertise in AWS, Docker, Kubernetes, and Terraform, I build resilient systems that scale efficiently while reducing operational overhead.
           
           <br /><br />
           
-          Previously, as a Frontend Developer Intern at Jio Platforms Limited, I
-          built a responsive inventory management system using React. I
-          implemented bulk data import functionality with Dropzone for Excel file
-          handling and collaborated with backend teams to integrate APIs
-          efficiently, ensuring real-time data updates and an improved user
-          experience.
+          At GetToHire.com, I architected a high-availability infrastructure on AWS that supports thousands of concurrent users with 99.9% uptime. By implementing Infrastructure as Code with Terraform and automating deployments through Jenkins pipelines, I reduced deployment cycles by 70% while eliminating configuration drift through Ansible automation. My monitoring solutions using the ELK Stack ensure proactive issue resolution before users are affected.
           
           <br /><br />
           
-          I focus on creating reliable systems and delivering impactful solutions
-          by combining technical expertise with a commitment to continuous
-          improvement.
+          I bridge the gap between development and operations by optimizing both workflow efficiency and system performance. My approach combines technical excellence with pragmatic problem-solving to deliver infrastructure that enables business growth rather than constraining it.
         </p>
 
         {/* Service Cards */}

@@ -2,7 +2,6 @@ import {
   AZURE,
   BESANT,
   CICD,
-  DEVOPS,
   EDULEEM,
   G4G,
   GETTOHIRE,
@@ -10,12 +9,10 @@ import {
   PORTFOLIO,
   ansible,
   aws,
-  awsAbout,
   aws as awsIcon,
   docker,
   git,
   jenkins,
-  jio,
   kubernetes,
   reactjs,
   terraform
@@ -80,11 +77,21 @@ export const certifications = [
 ];
 
 const services = [
-  { title: "DevOps Engineer", icon: DEVOPS },
-  { title: "Cloud Architect", icon: awsAbout },
-  // { title: "CI/CD Specialist", icon: CICD },
-  { title: "Frontend Developer", icon: reactjs },
+  {
+    title: "Cloud & Infrastructure Automation",
+    icon: terraform, // Representing Infrastructure Automation & AWS
+  },
+  {
+    title: "CI/CD & DevOps Pipelines",
+    icon: jenkins, // Representing CI/CD Pipelines & IaC (Ansible)
+  },
+  {
+    title: "Containerization & Monitoring",
+    icon: kubernetes, // Representing Kubernetes & Monitoring (Grafana)
+  },
 ];
+
+
 
 const technologies = [
   { name: "AWS", icon: awsIcon },
@@ -98,29 +105,30 @@ const technologies = [
 
 const experiences = [
   {
-    title: "DevOps Engineer",
+    title: "AWS DevOps Engineer",
     company_name: "GetToHire.com",
     icon: GTH,
     iconBg: "#383E56",
-    date: "July 2023 - Nov 2024",
+    date: "July 2023 - Feb 2025",
     points: [
-      "Designed and deployed a dynamic React-based platform hosted on AWS EC2.",
-      "Developed CI/CD pipelines using Jenkins, Docker, and Terraform to streamline deployments.",
-      "Integrated ELK Stack for enhanced monitoring and system reliability.",
-      "Achieved 99.9% uptime and reduced deployment time by 70%.",
+      "Architected and managed AWS cloud infrastructure, ensuring scalability and high availability.",
+      "Developed CI/CD pipelines with Jenkins, Docker, and Terraform for automated deployments.",
+      "Implemented infrastructure as code (IaC) using Terraform and AWS CloudFormation.",
+      "Integrated ELK Stack for real-time monitoring, enhancing system reliability and performance.",
+      "Achieved 99.9% uptime and reduced deployment time by 70% through automation.",
     ],
   },
   {
-    title: "Frontend Developer Intern",
-    company_name: "Jio Platforms Limited (JPL)",
-    icon: jio,
+    title: "Cloud Intern",
+    company_name: "GetToHire.com",
+    icon: GTH,
     iconBg: "#383E56",
-    date: "Nov 2023 - April 2024",
+    date: "Feb 2023 - July 2023",
     points: [
-      "Developed a responsive and user-friendly inventory management system frontend using React.",
-      "Implemented bulk data import functionality with Dropzone for seamless Excel file integration.",
-      "Enhanced user experience with an intuitive design and real-time data updates.",
-      "Collaborated with backend teams to integrate APIs efficiently.",
+      "Developed a cloud-native inventory management system using React and AWS services.",
+      "Implemented bulk data import and processing using AWS Lambda and S3.",
+      "Optimized application performance by leveraging AWS API Gateway and DynamoDB.",
+      "Collaborated with backend teams to integrate secure and scalable REST APIs.",
     ],
   },
 ];

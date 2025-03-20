@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
+import { FaFileAlt, FaGithub } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { navLinks } from "../constants/constants.js";
 
@@ -17,13 +18,15 @@ const Navbar = () => {
       const sections = document.querySelectorAll("section");
       for (const section of sections) {
         const sectionTop = section.offsetTop - 200;
+        const sectionBottom = sectionTop + section.offsetHeight;
         const sectionId = section.getAttribute("id");
-        
-        if (scrollPosition >= sectionTop) {
+      
+        if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
           setActive(sectionId);
-          break; // Exit loop once we find the active section
+          return; // Exit immediately once the correct section is found
         }
       }
+      
     });
   }, []);
 
@@ -33,17 +36,21 @@ const Navbar = () => {
   }, [handleScroll]);
 
   const renderNavLinks = (mobile = false) => (
-    <ul className={mobile ? "flex flex-col w-full space-y-2" : "hidden md:flex items-center space-x-8"}>
+    <ul className={mobile ? "flex flex-col w-full space-y-2" : "hidden md:flex items-center space-x-6"}>
       {navLinks.map((link) => (
         <li key={link.id}>
           <a
             href={`#${link.id}`}
             className={`
-              transition-colors duration-300 ease-in-out
+              transition-all duration-300 ease-in-out
               ${mobile 
-                ? "block w-full px-4 py-2 text-gray-100 hover:bg-white/10 rounded-lg" 
-                : "text-gray-100 hover:text-teal-400"}
-              ${active === link.id ? "font-semibold text-white" : "font-normal"}
+                ? "block w-full px-4 py-2 text-gray-100 hover:bg-gradient-to-r hover:from-teal-500/20 hover:to-blue-500/20 rounded-lg" 
+                : "text-gray-300 hover:text-teal-400 relative group"}
+              ${active === link.id 
+                ? mobile 
+                  ? "font-medium bg-gradient-to-r from-teal-500/20 to-blue-500/20 border-l-2 border-teal-400" 
+                  : "font-medium text-teal-400" 
+                : "font-normal"}
             `}
             onClick={() => {
               setActive(link.id);
@@ -51,17 +58,42 @@ const Navbar = () => {
             }}
           >
             {link.title}
+            {!mobile && (
+              <span className={`absolute left-0 right-0 bottom-0 h-0.5 bg-gradient-to-r from-teal-400 to-blue-400 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300 ${active === link.id ? "scale-x-100" : ""}`}></span>
+            )}
           </a>
         </li>
       ))}
     </ul>
   );
 
+  const ActionButtons = ({ mobile = false }) => (
+    <div className={`flex ${mobile ? "flex-col space-y-2 mt-4" : "items-center space-x-3"}`}>
+      <a 
+        href="https://github.com/Mayur-wagh4" 
+        className={`flex items-center justify-center gap-2 ${mobile ? "w-full px-4 py-2" : "px-3 py-1.5"} text-sm rounded-lg border border-gray-700/70 text-gray-300 hover:text-teal-400 hover:border-teal-400/40 transition-all duration-200`}
+      >
+        <FaGithub className="text-lg" />
+        {mobile && <span>GitHub</span>}
+      </a>
+      <a 
+        href="/mayur_resume.pdf"
+        download
+        className={`flex items-center justify-center gap-2 ${mobile ? "w-full px-4 py-2" : "px-3 py-1.5"} text-sm rounded-lg border border-gray-700/70 text-gray-300 hover:text-teal-400 hover:border-teal-400/40 transition-all duration-200`}
+      >
+        <FaFileAlt className="text-lg" />
+        {mobile && <span>Resume</span>}
+      </a>
+    </div>
+  );
+
   return (
     <nav className={`
       fixed top-0 left-0 right-0 z-50 
-      ${scrolled ? "py-2 shadow-lg" : "py-4"}
-      backdrop-blur-md bg-opacity-30 border-b-2 border-gray-700
+      ${scrolled 
+        ? "py-2 bg-black/80 shadow-md shadow-teal-900/10" 
+        : "py-4 bg-transparent"}
+      backdrop-blur-md border-b border-gray-800/50
       transition-all duration-300 ease-in-out
     `}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -75,11 +107,16 @@ const Navbar = () => {
               window.scrollTo(0, 0);
             }}
           >
-            <span className="text-2xl font-bold tracking-wider hover:text-teal-400 transition-colors">MAYUR WAGH</span>
+            <span className="text-2xl font-bold tracking-wider">
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-teal-400 to-blue-400">MAYUR</span> WAGH
+            </span>
           </Link>
 
           {/* Desktop Navigation */}
-          {renderNavLinks()}
+          <div className="hidden md:flex items-center space-x-8">
+            {renderNavLinks()}
+            <ActionButtons />
+          </div>
 
           {/* Mobile Menu Button */}
           <button
@@ -107,9 +144,10 @@ const Navbar = () => {
 
         {/* Mobile Menu */}
         {toggle && (
-          <div className="md:hidden mt-2 rounded-lg  shadow-xl backdrop-blur-md bg-opacity-40">
+          <div className="md:hidden mt-2 rounded-lg shadow-xl bg-black/90 backdrop-blur-xl border border-gray-800/50 animate-fadeIn">
             <div className="p-4">
               {renderNavLinks(true)}
+              <ActionButtons mobile={true} />
             </div>
           </div>
         )}
