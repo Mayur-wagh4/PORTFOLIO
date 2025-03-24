@@ -81,7 +81,7 @@ const Hero = () => {
                 <span>Contact</span>
               </a>
 
-              <a href="/mayur_resume.pdf" download className="flex items-center gap-2 px-6 py-3 text-base lg:text-lg rounded-lg bg-indigo-600 text-white hover:opacity-90 transform hover:scale-105 transition duration-200 shadow-lg hover:shadow-indigo-600/25">
+              <a href="/Mayur_Wagh_DevOps_Engineer.pdf" download className="flex items-center gap-2 px-6 py-3 text-base lg:text-lg rounded-lg bg-indigo-600 text-white hover:opacity-90 transform hover:scale-105 transition duration-200 shadow-lg hover:shadow-indigo-600/25">
                 <FaFileAlt className="text-white text-xl" />
                 <span>Resume</span>
               </a>
