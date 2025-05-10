@@ -78,7 +78,7 @@ const Hero = () => {
 
               <a href="#contact" className="flex items-center gap-2 px-6 py-3 text-base lg:text-lg rounded-lg border-2 border-teal-400 text-teal-400 hover:bg-teal-400 hover:text-white transform hover:scale-105 transition duration-200 shadow-lg hover:shadow-teal-400/25">
                 <FaEnvelope className="text-teal-400 text-xl group-hover:text-white" />
-                <span>Contact</span>
+                <span>Contac</span>
               </a>
 
               <a href="/Mayur_Wagh_DevOps_Engineer.pdf" download className="flex items-center gap-2 px-6 py-3 text-base lg:text-lg rounded-lg bg-indigo-600 text-white hover:opacity-90 transform hover:scale-105 transition duration-200 shadow-lg hover:shadow-indigo-600/25">
