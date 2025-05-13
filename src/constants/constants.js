@@ -105,11 +105,11 @@ const technologies = [
 
 const experiences = [
   {
-    title: "AWS DevOps Engineer",
+    title: "DevOps Engineer",
     company_name: "GetToHire.com",
     icon: GTH,
     iconBg: "#383E56",
-    date: "July 2023 - Feb 2025",
+    date: "June 2023 - April 2025",
     points: [
       "Architected and managed AWS cloud infrastructure, ensuring scalability and high availability.",
       "Developed CI/CD pipelines with Jenkins, Docker, and Terraform for automated deployments.",
@@ -123,7 +123,7 @@ const experiences = [
     company_name: "GetToHire.com",
     icon: GTH,
     iconBg: "#383E56",
-    date: "Feb 2023 - July 2023",
+    date: "Feb 2023 - June 2023",
     points: [
       "Developed a cloud-native inventory management system using React and AWS services.",
       "Implemented bulk data import and processing using AWS Lambda and S3.",
