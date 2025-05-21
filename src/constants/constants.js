@@ -246,7 +246,7 @@ const projects = [
     description:
       "A CI/CD pipeline for a Node.js application using Jenkins and GitHub Actions, incorporating Docker, security scanning with SonarQube, and automated Kubernetes deployments.",
     tags: [
-      { name: "CI/CD", color: "blue-text-gradient" },
+      { name: "Continuous Integration", color: "blue-text-gradient" },
       { name: "Jenkins", color: "purple-text-gradient" },
       { name: "Docker", color: "orange-text-gradient" },
       { name: "SonarQube", color: "green-text-gradient" },
