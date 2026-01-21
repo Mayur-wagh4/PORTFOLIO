@@ -1,107 +1,121 @@
-/* eslint-disable react-refresh/only-export-components */
-/* eslint-disable react/prop-types */
-/* eslint-disable no-unused-vars */
 import { motion } from "framer-motion";
-import React from "react";
-import { Tilt } from "react-tilt";
-import { github } from "../assets";
+import React, { useState } from "react";
 import { projects } from "../constants/constants";
-import { styles } from "../styles";
-import { fadeIn, textVariant } from "../utils/motion";
-
-const ProjectCard = ({
-  index,
-  name,
-  description,
-  tags,
-  image,
-  source_code_link,
-  website_link,
-}) => (
-  <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
-    <Tilt
-      options={{
-        max: 45,
-        scale: 1,
-        speed: 450,
-      }}
-      className="bg-black p-5 rounded-2xl sm:w-[360px] w-full shadow-lg flex flex-col h-[500px] border border-gray-800 hover:border-gray-500 transition"
-    >
-      <div
-        className="relative w-full h-[180px] cursor-pointer"
-        onClick={() => window.open(website_link, "_blank")}
-      >
-        <img
-          src={image}
-          alt="project_image"
-          className="w-full h-full object-cover rounded-2xl"
-        />
-        <div className="absolute inset-0 flex justify-end m-3">
-          <div
-            onClick={(e) => {
-              e.stopPropagation();
-              window.open(source_code_link, "_blank");
-            }}
-            className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer"
-          >
-            <img
-              src={github}
-              alt="source code"
-              className="w-1/2 h-1/2 object-contain"
-            />
-          </div>
-        </div>
-      </div>
-
-      <div className="mt-5 flex-grow">
-        <h3 className="text-white font-bold text-[20px] line-clamp-1">
-          {name}
-        </h3>
-        <p className="mt-2 text-gray-300 text-[14px] line-clamp-4">
-          {description}
-        </p>
-      </div>
-
-      <div className="mt-auto pt-3">
-        <div className="flex flex-wrap gap-2">
-          {tags.slice(0, 10).map((tag) => (
-            <span
-              key={`${name}-${tag.name}`}
-              className={`text-[12px] ${tag.color} px-2 py-1 rounded-full bg-opacity-20 bg-white text-blue-400 inline-block`}
-            >
-              #{tag.name}
-            </span>
-          ))}
-        </div>
-      </div>
-    </Tilt>
-  </motion.div>
-);
+import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 
 const Works = () => {
+  const [activeFilter, setActiveFilter] = useState("All");
+
+  const categories = [
+    "All",
+    ...new Set(projects.flatMap(p => p.tags.map(t => t.name))),
+  ].slice(0, 6);
+
+  const filteredProjects =
+    activeFilter === "All"
+      ? projects
+      : projects.filter(p =>
+          p.tags.some(t => t.name === activeFilter)
+        );
+
   return (
-    <section id="projects" className="py-10">
-      <motion.div variants={textVariant()} className="text-center">
-        <p className={`${styles.sectionSubText} text-gray-400`}>
-          🚀 Scalable, Secure & Automated Solutions
-        </p>
-        <h2 className={`${styles.sectionHeadText} text-white`}>DevOps & React Projects</h2>
-      </motion.div>
-
-      <div className="w-full flex justify-center mt-5">
-        <motion.p
-          variants={fadeIn("", "", 0.1, 1)}
-          className="text-gray-200 text-[17px] max-w-3xl leading-[30px] text-center"
+    <section
+      id="projects"
+      className="py-12 bg-gradient-to-br from-slate-50 via-white to-sky-50"
+    >
+      <div className="max-w-6xl mx-auto px-4">
+        {/* Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mb-6"
         >
-          These projects showcase my expertise in **DevOps best practices, cloud-native solutions, and modern React development.**  
-          From **automated CI/CD pipelines, containerized applications, and Kubernetes deployments** to **optimized frontend performance and dynamic UI/UX**, each project is built for **scalability, security, and reliability** in production environments.
-        </motion.p>
-      </div>
+          <p className="text-sky-600 text-xs font-semibold uppercase tracking-wider mb-1">
+            Production Work
+          </p>
+          <h2 className="text-slate-900 text-3xl font-extrabold">
+            DevOps & Cloud Projects
+          </h2>
+        </motion.div>
 
-      <div className="mt-12 flex flex-wrap justify-center gap-7">
-        {projects.map((project, index) => (
-          <ProjectCard key={`project-${index}`} index={index} {...project} />
-        ))}
+        {/* Filters */}
+        <div className="flex flex-wrap justify-center gap-2 mb-8">
+          {categories.map(cat => (
+            <button
+              key={cat}
+              onClick={() => setActiveFilter(cat)}
+              className={`px-3 py-1.5 rounded-full text-xs font-medium transition ${
+                activeFilter === cat
+                  ? "bg-gradient-to-r from-purple-600 to-sky-600 text-white shadow"
+                  : "bg-white border border-slate-200 text-slate-600 hover:bg-slate-100"
+              }`}
+            >
+              {cat}
+            </button>
+          ))}
+        </div>
+
+        {/* Horizontal Cards */}
+        <div className="flex flex-col gap-4">
+          {filteredProjects.map((project, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ delay: index * 0.05 }}
+              viewport={{ once: true }}
+              className="group bg-white border border-slate-200 rounded-xl p-5 hover:shadow-md transition"
+            >
+              {/* Top Row */}
+              <div className="flex items-start justify-between gap-4">
+                <div>
+                  <h3 className="text-slate-900 font-bold text-base">
+                    {project.name}
+                  </h3>
+                  <p className="text-slate-600 text-sm mt-1 max-w-3xl">
+                    {project.description}
+                  </p>
+                </div>
+
+                {/* Actions */}
+                <div className="flex gap-3 text-slate-500">
+                  {project.source_code_link && (
+                    <FaGithub
+                      className="cursor-pointer hover:text-slate-900"
+                      onClick={() =>
+                        window.open(project.source_code_link, "_blank")
+                      }
+                    />
+                  )}
+                  {project.website_link && (
+                    <FaExternalLinkAlt
+                      className="cursor-pointer hover:text-slate-900"
+                      onClick={() =>
+                        window.open(project.website_link, "_blank")
+                      }
+                    />
+                  )}
+                </div>
+              </div>
+
+              {/* Tags */}
+              <div className="flex flex-wrap gap-2 mt-3">
+                {project.tags.slice(0, 6).map(tag => (
+                  <span
+                    key={tag.name}
+                    className="px-2.5 py-1 text-xs rounded-md border border-slate-200 bg-slate-50 text-slate-700"
+                  >
+                    {tag.name}
+                  </span>
+                ))}
+              </div>
+
+              {/* subtle accent */}
+              <div className="mt-3 h-[2px] w-full bg-gradient-to-r from-purple-500/40 to-sky-500/40 rounded-full opacity-0 group-hover:opacity-100 transition" />
+            </motion.div>
+          ))}
+        </div>
       </div>
     </section>
   );

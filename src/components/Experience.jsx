@@ -1,64 +1,117 @@
-import React from 'react';
-import { experiences } from '../constants/constants';
+import React from "react";
+import { motion } from "framer-motion";
+import { Tilt } from "react-tilt";
+import { experiences } from "../constants/constants";
+import { fadeIn, textVariant } from "../utils/motion";
 
-// Simple card component without animations
-const ExperienceCard = ({ experience }) => (
-  <div className="mb-10 p-6 bg-gradient-to-br from-indigo-900 to-blue-900 rounded-lg text-white border border-white/10 shadow-lg">
-    <div className="flex items-center mb-4">
-      <div className="w-12 h-12 flex justify-center items-center mr-4 bg-indigo-800 rounded-full">
-        <img 
-          src={experience.icon} 
-          alt={experience.company_name} 
-          className="w-3/5 h-3/5 object-contain"
-          loading="lazy"
-        />
+const ExperienceCard = ({ experience, index }) => {
+  return (
+    <motion.div
+      variants={fadeIn("up", "spring", index * 0.1, 0.6)}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true }}
+      className="relative pl-10"
+    >
+      {/* Timeline Dot */}
+      <div className="absolute left-0 top-6">
+        <div className="w-3.5 h-3.5 rounded-full bg-gradient-to-r from-purple-600 to-sky-600 border-2 border-white shadow-md" />
       </div>
-      <div>
-        <h3 className="text-2xl font-bold tracking-wide">
-          {experience.title}
-        </h3>
-        <p className="text-teal-300 text-base font-medium">
-          {experience.company_name}
-        </p>
-        <p className="text-gray-400 text-sm font-medium">{experience.date}</p>
-      </div>
-    </div>
 
-    <ul className="space-y-3 ml-5">
-      {experience.points.map((point, index) => (
-        <li 
-          key={`experience-point-${index}`} 
-          className="text-gray-200 text-sm tracking-wide list-disc"
-          style={{ lineHeight: '1.6' }}
-        >
-          {point}
-        </li>
-      ))}
-    </ul>
-  </div>
-);
+      {/* Card */}
+      <Tilt
+        options={{ max: 8, scale: 1.01, speed: 300 }}
+        className="bg-white rounded-xl border border-slate-200 shadow-sm hover:shadow-lg transition-all duration-300 group"
+      >
+        {/* Accent Bar */}
+        <div className="h-1 bg-gradient-to-r from-purple-600 to-sky-600 rounded-t-xl" />
+
+        <div className="p-4">
+          {/* Header */}
+          <div className="flex items-start gap-3 mb-2">
+            <div className="w-10 h-10 rounded-lg bg-slate-50 border border-slate-200 flex items-center justify-center shrink-0">
+              <img
+                src={experience.icon}
+                alt={experience.company_name}
+                className="w-6 h-6 object-contain"
+              />
+            </div>
+
+            <div>
+              <h3 className="text-slate-900 font-semibold text-sm group-hover:text-purple-600 transition-colors">
+                {experience.title}
+              </h3>
+              <p className="text-sky-600 text-xs font-medium">
+                {experience.company_name}
+              </p>
+              <p className="text-slate-500 text-[11px] mt-0.5">
+                {experience.date}
+              </p>
+            </div>
+          </div>
+
+          {/* Points */}
+          <ul className="space-y-2 pl-4">
+            {experience.points.map((point, idx) => (
+              <li
+                key={idx}
+                className="text-slate-600 text-xs leading-relaxed list-disc"
+              >
+                {point}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Hover Border */}
+        <div className="absolute inset-0 rounded-xl border-2 border-transparent group-hover:border-purple-400/40 transition-all pointer-events-none" />
+      </Tilt>
+    </motion.div>
+  );
+};
 
 const Experience = () => {
   return (
     <section
       id="experience"
-      className="w-full py-16 bg-black"
+      className="py-14 bg-gradient-to-br from-white via-sky-50 to-purple-50"
     >
-      <div className="text-center mb-12">
-        <p className="text-teal-300 text-lg font-medium">My Professional Journey</p>
-        <h2 className="text-white font-bold text-3xl md:text-5xl mt-2">
-          Work Experience
-        </h2>
-        <div className="w-24 h-1 bg-gradient-to-r from-teal-500 to-blue-500 mx-auto mt-4"></div>
-      </div>
+      <div className="max-w-5xl mx-auto px-4">
+        {/* Header */}
+        <motion.div
+          variants={textVariant()}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+          className="text-center mb-10"
+        >
+          <p className="text-purple-600 text-xs font-semibold uppercase tracking-wider mb-1">
+            Career
+          </p>
+          <h2 className="text-slate-900 text-3xl font-extrabold mb-2">
+            Work Experience
+          </h2>
+          <p className="text-slate-600 max-w-2xl mx-auto text-sm">
+            Production experience across DevOps, cloud infrastructure, CI/CD
+            and monitoring systems.
+          </p>
+        </motion.div>
 
-      <div className="container mx-auto px-4">
-        {experiences.map((experience, index) => (
-          <ExperienceCard
-            key={`experience-${index}`}
-            experience={experience}
-          />
-        ))}
+        {/* Timeline */}
+        <div className="relative">
+          {/* Vertical Line */}
+          <div className="absolute left-[6px] top-0 w-[2px] h-full bg-gradient-to-b from-purple-600/40 via-sky-600/40 to-purple-600/40" />
+
+          <div className="flex flex-col gap-6">
+            {experiences.map((experience, index) => (
+              <ExperienceCard
+                key={`experience-${index}`}
+                experience={experience}
+                index={index}
+              />
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );

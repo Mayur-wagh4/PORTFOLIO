@@ -78,201 +78,269 @@ export const certifications = [
 
 const services = [
   {
-    title: "Cloud & Infrastructure Automation",
-    icon: terraform, // Representing Infrastructure Automation & AWS
+    title: "Enterprise Cloud Architecture & Migration",
+    icon: terraform,
   },
   {
-    title: "CI/CD & DevOps Pipelines",
-    icon: jenkins, // Representing CI/CD Pipelines & IaC (Ansible)
+    title: "Production-Grade CI/CD & GitOps",
+    icon: jenkins,
   },
   {
-    title: "Containerization & Monitoring",
-    icon: kubernetes, // Representing Kubernetes & Monitoring (Grafana)
+    title: "Kubernetes Orchestration & Observability",
+    icon: kubernetes,
   },
 ];
-
-
 
 const technologies = [
   { name: "AWS", icon: awsIcon },
   { name: "Docker", icon: docker },
   { name: "Kubernetes", icon: kubernetes },
-  { name: "React JS", icon: reactjs },
+  { name: "GitLab CI/CD", icon: git },
   { name: "Jenkins", icon: jenkins },
   { name: "Terraform", icon: terraform },
-  { name: "ELK Stack", icon: git },
+  { name: "Prometheus", icon: kubernetes },
 ];
 
 const experiences = [
   {
     title: "DevOps Engineer",
+    company_name: "Experience Commerce",
+    icon: GTH,
+    iconBg: "#383E56",
+    date: "June 2025 - Present",
+    points: [
+      "Orchestrated zero-downtime production migration of 30+ servers and 5+ databases from Alibaba Cloud to AWS, serving a multi-tenant e-commerce platform with 100K+ daily transactions.",
+      "Architected and deployed self-hosted GitLab infrastructure supporting 10+ development teams with 20+ automated CI/CD pipelines, reducing deployment cycles from 2 hours to 15 minutes (87.5% improvement).",
+      "Engineered comprehensive observability stack using Prometheus and Grafana across 40+ production servers with 50+ intelligent alerts, achieving proactive incident detection and 99.9% uptime SLA.",
+      "Optimized cloud infrastructure costs by 30% through strategic EC2 rightsizing, autoscaling policies, and intelligent S3 lifecycle management of 500GB+ datasets.",
+      "Implemented enterprise-grade security architecture including IAM role-based access, VPC network segmentation, WAF rules, and managed 25+ SSL/TLS certificates across multiple domains.",
+      "Containerized 15+ legacy applications using Docker and Nginx, standardizing deployment patterns and enabling horizontal scaling capabilities.",
+    ],
+  },
+  {
+    title: "Cloud DevOps Engineer",
     company_name: "GetToHire.com",
     icon: GTH,
     iconBg: "#383E56",
     date: "June 2023 - April 2025",
     points: [
-      "Architected and managed AWS cloud infrastructure, ensuring scalability and high availability.",
-      "Developed CI/CD pipelines with Jenkins, Docker, and Terraform for automated deployments.",
-      "Implemented infrastructure as code (IaC) using Terraform and AWS CloudFormation.",
-      "Integrated ELK Stack for real-time monitoring, enhancing system reliability and performance.",
-      "Achieved 99.9% uptime and reduced deployment time by 70% through automation.",
+      "Managed production AWS infrastructure supporting high-traffic microservices architecture, maintaining 99.9% uptime and handling 50K+ concurrent users.",
+      "Built and maintained 15+ production CI/CD pipelines using Jenkins, Docker, and GitHub Actions, reducing deployment time by 70% and enabling daily releases.",
+      "Implemented Infrastructure as Code using Terraform and Ansible, automating provisioning of 50+ EC2 instances and reducing manual configuration effort by 50%.",
+      "Deployed and scaled containerized workloads on AWS EKS, managing 20+ microservices with auto-scaling, load balancing, and service mesh integration.",
+      "Established comprehensive monitoring and logging infrastructure using Prometheus, Grafana, and ELK Stack, reducing MTTR by 40%.",
+      "Hardened cloud security posture through IAM policies, Security Groups, AWS WAF, SSL/TLS implementation, and regular compliance audits.",
     ],
   },
   {
-    title: "Cloud Intern",
+    title: "DevOps Intern",
     company_name: "GetToHire.com",
     icon: GTH,
     iconBg: "#383E56",
-    date: "Feb 2023 - June 2023",
+    date: "Feb 2023 - May 2023",
     points: [
-      "Developed a cloud-native inventory management system using React and AWS services.",
-      "Implemented bulk data import and processing using AWS Lambda and S3.",
-      "Optimized application performance by leveraging AWS API Gateway and DynamoDB.",
-      "Collaborated with backend teams to integrate secure and scalable REST APIs.",
+      "Developed automated CI/CD pipelines for microservices deployment, integrating code quality checks and security scanning.",
+      "Containerized applications using Docker and deployed to AWS ECS and EKS environments with automated rollback capabilities.",
+      "Implemented cloud monitoring solutions using CloudWatch, Prometheus, and ELK Stack for real-time performance tracking.",
+      "Created Terraform modules for provisioning AWS resources including EC2, S3, RDS, and VPC networking components.",
+      "Enhanced infrastructure security through IAM policy design, Security Group configuration, and AWS WAF rule implementation.",
     ],
   },
 ];
-
-// Enhanced Skills array with additional relevant skills
 const Skills = [
-  { name: "AWS", level: "expert", icon: aws },
-  { name: "Docker", level: "expert", icon: docker },
-  { name: "Kubernetes", level: "expert", icon: kubernetes },
-  { name: "Terraform", level: "expert", icon: terraform },
-  { name: "Jenkins", level: "intermediate", icon: jenkins },
-  { name: "Ansible", level: "intermediate", icon: ansible },
-  { name: "Git", level: "intermediate", icon: git },
-  { name: "CI/CD", level: "expert", icon: CICD },
-  { name: "GitHub Actions", level: "intermediate", icon: git },
-  // { name: "Prometheus", level: "intermediate", icon: prometheus },
-  // { name: "Grafana", level: "intermediate", icon: grafana },
-  { name: "ELK Stack", level: "intermediate", icon: aws },
-  // { name: "SonarQube", level: "intermediate", icon: sonarqube }
-];
+  // Cloud Platforms & Architecture
+  { name: "AWS", level: "expert", category: "Cloud" },
+  { name: "Alibaba Cloud", level: "expert", category: "Cloud" },
+  { name: "Multi-Cloud Strategy", level: "expert", category: "Cloud" },
+  { name: "Cloud Migration", level: "expert", category: "Cloud" },
+  { name: "Cost Optimization", level: "expert", category: "Cloud" },
 
+  // Container & Orchestration
+  { name: "Docker", level: "expert", category: "Container" },
+  { name: "Kubernetes", level: "expert", category: "Container" },
+  { name: "AWS EKS", level: "expert", category: "Container" },
+  { name: "Helm", level: "intermediate", category: "Container" },
+  { name: "Service Mesh", level: "intermediate", category: "Container" },
+
+  // Infrastructure as Code
+  { name: "Terraform", level: "expert", category: "IaC" },
+  { name: "Ansible", level: "intermediate", category: "IaC" },
+  { name: "CloudFormation", level: "intermediate", category: "IaC" },
+
+  // CI/CD & GitOps
+  { name: "GitLab CI/CD", level: "expert", category: "CI/CD" },
+  { name: "Jenkins", level: "expert", category: "CI/CD" },
+  { name: "GitHub Actions", level: "intermediate", category: "CI/CD" },
+  { name: "ArgoCD", level: "intermediate", category: "CI/CD" },
+
+  // Monitoring & Observability
+  { name: "Prometheus", level: "expert", category: "Monitoring" },
+  { name: "Grafana", level: "expert", category: "Monitoring" },
+  { name: "ELK Stack", level: "intermediate", category: "Monitoring" },
+  { name: "CloudWatch", level: "intermediate", category: "Monitoring" },
+
+  // Security & Compliance
+  { name: "IAM & RBAC", level: "expert", category: "Security" },
+  { name: "SSL/TLS", level: "expert", category: "Security" },
+  { name: "AWS WAF", level: "intermediate", category: "Security" },
+  { name: "Security Hardening", level: "expert", category: "Security" },
+
+  // Automation
+  { name: "Python", level: "intermediate", category: "Automation" },
+  { name: "Bash/Shell", level: "expert", category: "Automation" },
+  { name: "Git", level: "expert", category: "Automation" },
+];
 const projects = [
   {
-    name: "GetToHire.com",
+    name: "Enterprise Multi-Cloud Migration Platform",
     description:
-      "Dynamic job portal built on React and Node.js, hosted on AWS EC2 with MongoDB, featuring CI/CD with Jenkins and Docker.",
+      "Production-grade cloud migration framework that successfully migrated 30+ servers, 5+ databases, and 500GB+ data from Alibaba Cloud to AWS with zero downtime, including automated DNS cutover and rollback capabilities.",
     tags: [
       { name: "AWS", color: "blue-text-gradient" },
-      { name: "Jenkins", color: "purple-text-gradient" },
-      { name: "MongoDB", color: "orange-text-gradient" },
-      { name: "React", color: "green-text-gradient" },
-      { name: "Node.js", color: "pink-text-gradient" },
+      { name: "Alibaba Cloud", color: "purple-text-gradient" },
+      { name: "Migration Strategy", color: "orange-text-gradient" },
+      { name: "Zero Downtime", color: "green-text-gradient" },
+      { name: "Disaster Recovery", color: "pink-text-gradient" },
     ],
-    image: GETTOHIRE,
-    source_code_link: "https://github.com/Mayur-wagh4/GetToHire",
-    website_link: "http://www.gettohire.com/",
+    image: aws,
+    source_code_link: "#",
+    website_link: "#",
   },
   {
-    name: "Mayurwagh.in",
+    name: "GitLab CI/CD Enterprise Deployment",
     description:
-      "A personal portfolio website showcasing skills, projects, and certifications. Built using React and hosted on AWS Amplify for robust, scalable deployment.",
+      "Self-hosted GitLab infrastructure serving 10+ development teams with 20+ production pipelines, featuring automated testing, security scanning, containerization, and deployment orchestration reducing release cycles by 87.5%.",
     tags: [
-      { name: "React", color: "blue-text-gradient" },
-      { name: "AWS Amplify", color: "purple-text-gradient" },
-      { name: "CI/CD", color: "pink-text-gradient" },
-      { name: "Portfolio", color: "green-text-gradient" },
-      { name: "JavaScript", color: "orange-text-gradient" },
+      { name: "GitLab", color: "blue-text-gradient" },
+      { name: "CI/CD", color: "purple-text-gradient" },
+      { name: "Docker", color: "orange-text-gradient" },
+      { name: "Automation", color: "green-text-gradient" },
+      { name: "DevSecOps", color: "pink-text-gradient" },
     ],
-    image: PORTFOLIO,
-    source_code_link: "https://github.com/Mayur-wagh4/Porfolio",
-    website_link: "https://mayurwagh.in/",
+    image: CICD,
+    source_code_link: "#",
+    website_link: "#",
   },
   {
-    name: "Get4Grow.com",
+    name: "Production Observability & Monitoring Stack",
     description:
-      "Static React website hosted on AWS S3 with CloudFront CDN, CI/CD automation via AWS CodePipeline, and CloudFormation-based infrastructure management.",
+      "Enterprise-grade monitoring infrastructure using Prometheus and Grafana across 40+ production servers with 50+ intelligent alerts, custom dashboards, and automated incident response reducing MTTR by 60%.",
     tags: [
-      { name: "AWS", color: "blue-text-gradient" },
-      { name: "React", color: "purple-text-gradient" },
-      { name: "CloudFormation", color: "pink-text-gradient" },
-      { name: "CloudFront", color: "green-text-gradient" },
-      { name: "AWS CodePipeline", color: "orange-text-gradient" },
+      { name: "Prometheus", color: "blue-text-gradient" },
+      { name: "Grafana", color: "purple-text-gradient" },
+      { name: "Alerting", color: "orange-text-gradient" },
+      { name: "Observability", color: "green-text-gradient" },
+      { name: "SRE", color: "pink-text-gradient" },
     ],
-    image: G4G,
-    source_code_link: "https://github.com/Mayur-wagh4/Get4Grow",
-    website_link: "http://www.get4grow.com/",
+    image: kubernetes,
+    source_code_link: "#",
+    website_link: "#",
   },
   {
-    name: "EKS-InfraManager",
+    name: "AI-Driven Self-Healing Kubernetes Platform",
     description:
-      "Automates the deployment of an AWS EKS cluster using Terraform, ensuring a scalable and production-ready Kubernetes environment with IAM roles, ALB integration, and CloudWatch monitoring.",
+      "Production-grade AIOps platform that uses machine learning to detect anomalies in Kubernetes metrics and automatically triggers self-healing actions like pod restarts and autoscaling based on predictive analysis.",
+    tags: [
+      { name: "AIOps", color: "blue-text-gradient" },
+      { name: "Kubernetes", color: "purple-text-gradient" },
+      { name: "Machine Learning", color: "orange-text-gradient" },
+      { name: "Auto-Healing", color: "green-text-gradient" },
+      { name: "Python", color: "pink-text-gradient" },
+    ],
+    image: kubernetes,
+    source_code_link: "https://github.com/Mayur-wagh4/aiops-self-healing-k8s",
+    website_link: "https://github.com/Mayur-wagh4/aiops-self-healing-k8s",
+  },
+  {
+    name: "Cost Optimization & FinOps Platform",
+    description:
+      "Automated cloud cost optimization system that reduced infrastructure spend by 30% through intelligent EC2 rightsizing, autoscaling optimization, S3 lifecycle policies, and real-time cost anomaly detection.",
+    tags: [
+      { name: "FinOps", color: "blue-text-gradient" },
+      { name: "AWS", color: "purple-text-gradient" },
+      { name: "Cost Optimization", color: "orange-text-gradient" },
+      { name: "Automation", color: "green-text-gradient" },
+      { name: "Analytics", color: "pink-text-gradient" },
+    ],
+    image: aws,
+    source_code_link: "#",
+    website_link: "#",
+  },
+  {
+    name: "Predictive Auto-Scaling using AIOps",
+    description:
+      "AI-powered predictive scaling system that analyzes historical traffic patterns and system metrics to proactively scale Kubernetes workloads before performance degradation, reducing resource waste by 25%.",
+    tags: [
+      { name: "Predictive Analytics", color: "blue-text-gradient" },
+      { name: "AWS EKS", color: "purple-text-gradient" },
+      { name: "Prometheus", color: "orange-text-gradient" },
+      { name: "Python", color: "green-text-gradient" },
+      { name: "HPA", color: "pink-text-gradient" },
+    ],
+    image: kubernetes,
+    source_code_link: "https://github.com/Mayur-wagh4/predictive-autoscaling-aiops",
+    website_link: "https://github.com/Mayur-wagh4/predictive-autoscaling-aiops",
+  },
+  {
+    name: "Enterprise Security & Compliance Automation",
+    description:
+      "Comprehensive security automation framework managing 25+ SSL certificates, 100+ DNS records, IAM policies across 50+ resources, VPC security groups, and WAF rules with automated compliance reporting.",
+    tags: [
+      { name: "Security", color: "blue-text-gradient" },
+      { name: "IAM", color: "purple-text-gradient" },
+      { name: "SSL/TLS", color: "orange-text-gradient" },
+      { name: "Compliance", color: "green-text-gradient" },
+      { name: "Automation", color: "pink-text-gradient" },
+    ],
+    image: aws,
+    source_code_link: "#",
+    website_link: "#",
+  },
+  {
+    name: "Intelligent Log Analysis & Root Cause Detection",
+    description:
+      "AIOps-based log intelligence system using ELK Stack and machine learning to cluster logs, detect recurring failure patterns, and provide automated root cause analysis reducing investigation time by 50%.",
+    tags: [
+      { name: "ELK Stack", color: "blue-text-gradient" },
+      { name: "AIOps", color: "purple-text-gradient" },
+      { name: "Log Analytics", color: "orange-text-gradient" },
+      { name: "Python", color: "green-text-gradient" },
+      { name: "RCA", color: "pink-text-gradient" },
+    ],
+    image: aws,
+    source_code_link: "https://github.com/Mayur-wagh4/aiops-log-analysis",
+    website_link: "https://github.com/Mayur-wagh4/aiops-log-analysis",
+  },
+  {
+    name: "EKS Production Infrastructure Platform",
+    description:
+      "Enterprise Kubernetes platform on AWS EKS with Terraform automation, featuring multi-AZ deployment, ALB integration, IAM RBAC, CloudWatch monitoring, and automated backup/recovery serving 20+ microservices.",
     tags: [
       { name: "Terraform", color: "blue-text-gradient" },
       { name: "AWS EKS", color: "purple-text-gradient" },
       { name: "Kubernetes", color: "orange-text-gradient" },
-      { name: "CloudWatch", color: "pink-text-gradient" },
-      { name: "IAM", color: "green-text-gradient" },
+      { name: "High Availability", color: "pink-text-gradient" },
+      { name: "Production-Ready", color: "green-text-gradient" },
     ],
     image: kubernetes,
     source_code_link: "https://github.com/Mayur-wagh4/EKS-InfraManager",
     website_link: "https://github.com/Mayur-wagh4/EKS-InfraManager",
   },
   {
-    name: "CloudScaleApp-EKS",
+    name: "Microservices Platform with Full Observability",
     description:
-      "Deploys a three-tier web application on AWS EKS using Kubernetes with a React frontend, Node.js backend, and MongoDB. Features CI/CD, autoscaling, and ALB integration.",
+      "Production three-tier application on AWS EKS with React frontend, Node.js backend, MongoDB, featuring complete CI/CD automation, horizontal autoscaling, ALB, and integrated monitoring stack.",
     tags: [
-      { name: "Kubernetes", color: "blue-text-gradient" },
+      { name: "Microservices", color: "blue-text-gradient" },
       { name: "AWS EKS", color: "purple-text-gradient" },
       { name: "CI/CD", color: "pink-text-gradient" },
-      { name: "React", color: "green-text-gradient" },
-      { name: "MongoDB", color: "orange-text-gradient" },
+      { name: "Full-Stack", color: "green-text-gradient" },
+      { name: "Observability", color: "orange-text-gradient" },
     ],
     image: kubernetes,
     source_code_link: "https://github.com/Mayur-wagh4/CloudScaleApp-EKS",
     website_link: "https://github.com/Mayur-wagh4/CloudScaleApp-EKS",
   },
-  {
-    name: "InfraPro-Terraform",
-    description:
-      "Infrastructure as Code (IaC) project automating AWS resource provisioning, including EC2, RDS, S3, and VPC networking using Terraform.",
-    tags: [
-      { name: "Terraform", color: "blue-text-gradient" },
-      { name: "AWS", color: "purple-text-gradient" },
-      { name: "Cloud Infrastructure", color: "orange-text-gradient" },
-      { name: "EC2", color: "green-text-gradient" },
-      { name: "RDS", color: "pink-text-gradient" },
-    ],
-    image: terraform,
-    source_code_link: "https://github.com/Mayur-wagh4/InfraPro-Terraform",
-    website_link: "https://github.com/Mayur-wagh4/InfraPro-Terraform",
-  },
-  {
-    name: "SecureNode-CI-CD",
-    description:
-      "A CI/CD pipeline for a Node.js application using Jenkins and GitHub Actions, incorporating Docker, security scanning with SonarQube, and automated Kubernetes deployments.",
-    tags: [
-      { name: "Continuous Integration", color: "blue-text-gradient" },
-      { name: "Jenkins", color: "purple-text-gradient" },
-      { name: "Docker", color: "orange-text-gradient" },
-      { name: "SonarQube", color: "green-text-gradient" },
-      { name: "GitHub Actions", color: "pink-text-gradient" },
-    ],
-    image: CICD,
-    source_code_link: "https://github.com/Mayur-wagh4/SecureNode-CI-CD",
-    website_link: "https://github.com/Mayur-wagh4/SecureNode-CI-CD",
-  },
-  {
-    name: "K8s-MonitoringStack",
-    description:
-      "Comprehensive Kubernetes observability stack using Prometheus, Grafana, and cAdvisor for real-time monitoring, alerting, and performance visualization.",
-    tags: [
-      { name: "Kubernetes", color: "blue-text-gradient" },
-      { name: "Prometheus", color: "purple-text-gradient" },
-      { name: "Grafana", color: "orange-text-gradient" },
-      { name: "cAdvisor", color: "green-text-gradient" },
-      { name: "Monitoring", color: "pink-text-gradient" },
-    ],
-    image: kubernetes,
-    source_code_link: "https://github.com/Mayur-wagh4/K8s-MonitoringStack",
-    website_link: "https://github.com/Mayur-wagh4/K8s-MonitoringStack",
-  }
 ];
 
-
 export { Skills, experiences, projects, services, technologies };
-

@@ -4,6 +4,54 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+/* Theme tokens: white base + sky primary + varied accents */
+:root{
+  --bg:#ffffff;
+  --bg2:#f7fbff;
+  --surface:#ffffff;
+  --surface2:rgba(2,6,23,.03);
+  --border:rgba(2,6,23,.10);
+  --text:rgba(2,6,23,.92);
+  --muted:rgba(2,6,23,.62);
+  --sky:#0ea5e9;
+  --sky2:#38bdf8;
+  --purple:#7c3aed;
+  --pink:#ec4899;
+  --indigo:#4f46e5;
+}
+          @keyframes orbit {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+          }
+          .animate-orbit {
+            animation: orbit 20s linear infinite;
+          }
+          @keyframes float-slow {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
+          }
+          .animate-float-slow {
+            animation: float-slow 6s ease-in-out infinite;
+          }
+          .bg-gradient-radial {
+            background: radial-gradient(circle, var(--tw-gradient-stops));
+          }
+        
+
+@keyframes orbit {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-orbit {
+  animation: orbit 20s linear infinite;
+}
+
+
 /* Global Reset */
 * {
   margin: 0;
@@ -24,6 +72,11 @@ body {
   overflow-x: hidden;
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none; /* IE and Edge */
+  color: var(--text);
+  background:
+    radial-gradient(900px 600px at 10% 10%, rgba(56,189,248,.20), transparent 60%),
+    radial-gradient(900px 600px at 90% 10%, rgba(124,58,237,.14), transparent 55%),
+    linear-gradient(180deg, var(--bg) 0%, var(--bg2) 70%, #ffffff 100%);
 }
 
 /* Hide Webkit Scrollbars */
@@ -42,7 +95,7 @@ body {
 
 /* Text Gradient - Optimized for Performance */
 .text-gradient {
-  background: linear-gradient(135deg, #3b82f6, #10b981, #f97316);
+  background: linear-gradient(135deg, var(--sky), var(--purple));
   -webkit-background-clip: text;
   color: transparent;
   background-size: 200% 200%;
@@ -64,7 +117,7 @@ body {
   height: 40px;
   border: 3px solid rgba(255, 255, 255, 0.1);
   border-radius: 50%;
-  border-top-color: #10b981;
+  border-top-color: var(--sky);
   animation: spin 1s linear infinite;
   will-change: transform;
 }
@@ -104,7 +157,7 @@ body {
 
 /* Vertical Timeline Styling - Removed Delays & Optimized */
 .vertical-timeline::before {
-  background: rgba(94, 234, 212, 0.2);
+  background: rgba(14, 165, 233, 0.22);
 }
 .vertical-timeline-element-date {
   display: block !important;
@@ -173,4 +226,40 @@ body {
 /* Optimize overall animations */
 * {
   backface-visibility: hidden;
+}
+
+@layer utilities{
+  .black-gradient{
+    background: linear-gradient(180deg, rgba(2,6,23,.06) 0%, rgba(2,6,23,.02) 100%);
+    border: 1px solid rgba(2,6,23,.10);
+  }
+
+  .blue-text-gradient{
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(90deg, var(--sky), var(--sky2));
+  }
+  .purple-text-gradient{
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(90deg, var(--purple), var(--indigo));
+  }
+  .pink-text-gradient{
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(90deg, var(--pink), var(--purple));
+  }
+
+  /* Section accent helpers (different “manners”) */
+  .accent-hero{ --accent: var(--sky); --accent2: var(--sky2); }
+  .accent-about{ --accent: var(--purple); --accent2: var(--indigo); }
+  .accent-projects{ --accent: var(--indigo); --accent2: var(--sky); }
+  .accent-contact{ --accent: var(--pink); --accent2: var(--purple); }
+
+  .accent-title{
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(90deg, var(--accent), var(--accent2));
+  }
+  .accent-underline{
+    height: 3px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, var(--accent), var(--accent2));
+  }
 }

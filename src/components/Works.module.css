@@ -1,0 +1,66 @@
+.section{
+  @apply py-8;
+}
+.header{
+  @apply text-center;
+}
+.subText{
+  @apply text-slate-600;
+}
+.headText{
+  @apply text-slate-900;
+}
+.introWrap{
+  @apply w-full flex justify-center mt-3;
+}
+.intro{
+  @apply text-slate-600 text-[15px] max-w-3xl leading-[26px] text-center;
+}
+.grid{
+  @apply mt-8 flex flex-wrap justify-center gap-4;
+}
+.card{
+  @apply bg-white p-4 rounded-2xl sm:w-[340px] w-full shadow-lg flex flex-col border border-slate-200 transition;
+  min-height: 460px;
+}
+.card:hover{
+  @apply border-slate-300;
+}
+.media{
+  @apply relative w-full cursor-pointer;
+  height: 160px;
+}
+.mediaImg{
+  @apply w-full h-full object-cover rounded-2xl;
+}
+.actions{
+  @apply absolute inset-0 flex justify-end m-2;
+}
+.githubBtn{
+  @apply w-9 h-9 rounded-full flex justify-center items-center cursor-pointer;
+  background: linear-gradient(180deg, rgba(255,255,255,.12) 0%, rgba(255,255,255,.04) 100%);
+  border: 1px solid rgba(255,255,255,.12);
+  backdrop-filter: blur(8px);
+}
+.githubIcon{
+  @apply w-1/2 h-1/2 object-contain;
+}
+.body{
+  @apply mt-4 flex-grow;
+}
+.title{
+  @apply text-slate-900 font-bold text-[18px] line-clamp-1;
+}
+.desc{
+  @apply mt-2 text-slate-600 text-[13px] leading-[20px] line-clamp-4;
+}
+.tagsWrap{
+  @apply mt-auto pt-3;
+}
+.tags{
+  @apply flex flex-wrap gap-2;
+}
+.tag{
+  @apply text-[12px] px-2 py-1 rounded-full bg-slate-50 border border-slate-200 inline-block;
+}
+

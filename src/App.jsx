@@ -6,11 +6,7 @@ import Certifications from "./components/certifications";
 function App() {
   return (
     <BrowserRouter>
-      <div className="relative">
-        {/* Static Black Background */}
-        <div className="absolute inset-0 -z-10 bg-black"></div>
-
-        {/* App Content */}
+      <div className="relative min-h-screen">
         <Navbar />
         <Hero />
 

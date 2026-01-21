@@ -44,12 +44,12 @@ const Navbar = () => {
             className={`
               transition-all duration-300 ease-in-out
               ${mobile 
-                ? "block w-full px-4 py-2 text-gray-100 hover:bg-gradient-to-r hover:from-teal-500/20 hover:to-blue-500/20 rounded-lg" 
-                : "text-gray-300 hover:text-teal-400 relative group"}
+                ? "block w-full px-4 py-2 text-slate-900 hover:bg-sky-50 rounded-lg" 
+                : "text-slate-700 hover:text-sky-700 relative group"}
               ${active === link.id 
                 ? mobile 
-                  ? "font-medium bg-gradient-to-r from-teal-500/20 to-blue-500/20 border-l-2 border-teal-400" 
-                  : "font-medium text-teal-400" 
+                  ? "font-medium bg-sky-50 border-l-2 border-sky-500" 
+                  : "font-semibold text-sky-700" 
                 : "font-normal"}
             `}
             onClick={() => {
@@ -59,7 +59,7 @@ const Navbar = () => {
           >
             {link.title}
             {!mobile && (
-              <span className={`absolute left-0 right-0 bottom-0 h-0.5 bg-gradient-to-r from-teal-400 to-blue-400 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300 ${active === link.id ? "scale-x-100" : ""}`}></span>
+              <span className={`absolute left-0 right-0 bottom-0 h-0.5 bg-gradient-to-r from-sky-500 to-indigo-500 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300 ${active === link.id ? "scale-x-100" : ""}`}></span>
             )}
           </a>
         </li>
@@ -71,7 +71,7 @@ const Navbar = () => {
     <div className={`flex ${mobile ? "flex-col space-y-2 mt-4" : "items-center space-x-3"}`}>
       <a 
         href="https://github.com/Mayur-wagh4" 
-        className={`flex items-center justify-center gap-2 ${mobile ? "w-full px-4 py-2" : "px-3 py-1.5"} text-sm rounded-lg border border-gray-700/70 text-gray-300 hover:text-teal-400 hover:border-teal-400/40 transition-all duration-200`}
+        className={`flex items-center justify-center gap-2 ${mobile ? "w-full px-4 py-2" : "px-3 py-1.5"} text-sm rounded-lg border border-slate-200 text-slate-700 hover:text-sky-700 hover:border-sky-300 transition-all duration-200 bg-white/70`}
       >
         <FaGithub className="text-lg" />
         {mobile && <span>GitHub</span>}
@@ -79,7 +79,7 @@ const Navbar = () => {
       <a 
         href="/mayur_resume.pdf"
         download
-        className={`flex items-center justify-center gap-2 ${mobile ? "w-full px-4 py-2" : "px-3 py-1.5"} text-sm rounded-lg border border-gray-700/70 text-gray-300 hover:text-teal-400 hover:border-teal-400/40 transition-all duration-200`}
+        className={`flex items-center justify-center gap-2 ${mobile ? "w-full px-4 py-2" : "px-3 py-1.5"} text-sm rounded-lg border border-slate-200 text-slate-700 hover:text-sky-700 hover:border-sky-300 transition-all duration-200 bg-white/70`}
       >
         <FaFileAlt className="text-lg" />
         {mobile && <span>Resume</span>}
@@ -91,9 +91,9 @@ const Navbar = () => {
     <nav className={`
       fixed top-0 left-0 right-0 z-50 
       ${scrolled 
-        ? "py-2 bg-black/80 shadow-md shadow-teal-900/10" 
+        ? "py-2 bg-white/70 shadow-sm shadow-sky-500/10" 
         : "py-4 bg-transparent"}
-      backdrop-blur-md border-b border-gray-800/50
+      backdrop-blur-md border-b border-slate-200/70
       transition-all duration-300 ease-in-out
     `}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -108,7 +108,7 @@ const Navbar = () => {
             }}
           >
             <span className="text-2xl font-bold tracking-wider">
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-teal-400 to-blue-400">MAYUR</span> WAGH
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-sky-600 to-indigo-600">MAYUR</span> WAGH
             </span>
           </Link>
 
@@ -144,7 +144,7 @@ const Navbar = () => {
 
         {/* Mobile Menu */}
         {toggle && (
-          <div className="md:hidden mt-2 rounded-lg shadow-xl bg-black/90 backdrop-blur-xl border border-gray-800/50 animate-fadeIn">
+          <div className="md:hidden mt-2 rounded-lg shadow-xl bg-white/90 backdrop-blur-xl border border-slate-200 animate-fadeIn">
             <div className="p-4">
               {renderNavLinks(true)}
               <ActionButtons mobile={true} />
