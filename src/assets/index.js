@@ -28,6 +28,7 @@ import python from "./tech/python.png";
 import reactjs from "./tech/reactjs.png";
 import shell from "./tech/shell.png";
 import terraform from "./tech/terraform.png";
+import EC from "./EC.jpeg";
 
 // Exporting Assets
 export {
@@ -35,7 +36,7 @@ export {
   aws, awsAbout, AZURE,
   BESANT, CICD, close, DEVOPS, docker, DS,
   EDULEEM, G4G, GETTOHIRE, git, github, GTH, jenkins, jio, kubernetes,
-  linux, logo,
+  linux, logo,EC,
   menu, PORTFOLIO, profile, python, reactjs, shell,
   terraform
 };

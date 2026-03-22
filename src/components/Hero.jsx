@@ -54,8 +54,8 @@ const Hero = () => {
               Hi, I'm <span className="text-sky-600">Mayur Wagh</span>
             </motion.h1>
 
-            <p className="text-lg sm:text-xl lg:text-2xl text-slate-700 text-center md:text-left max-w-2xl leading-relaxed mt-2">
-              DevOps Engineer with hands-on experience in zero-downtime cloud migrations, AWS microservices, and enterprise CI/CD platforms. I build production-grade infrastructure with 99.9% uptime, strong security posture, and optimized cloud costs at scale. <span className="text-sky-600 font-semibold">AWS cloud services</span>, <span className="text-indigo-600 font-semibold">CI/CD pipelines</span>, and <span className="text-purple-600 font-semibold">infrastructure automation</span>.
+            <p className="text-md sm:text-xl lg:text-2xl text-slate-700 text-center md:text-left max-w-2xl leading-relaxed mt-2">
+Awarded <span className="text-yellow-500 font-semibold">Rising Star of the Quarter (Oct–Dec 2025)</span> for delivering a 40+ server cloud migration and improving deployment speed by 87.5% via GitLab CI/CD. Brings 3 years of production experience in <span className="text-sky-600 font-semibold">AWS & Kubernetes (EKS)</span>, <span className="text-indigo-600 font-semibold">DevSecOps & CI/CD pipelines</span> with integrated security scanning — ensuring <span className="text-purple-600 font-semibold">99.9% uptime</span> through Prometheus & Grafana observability, and achieving <span className="text-green-600 font-semibold">40% cloud cost optimisation</span> across production infrastructure.
             </p>
 
             <p className="text-xl sm:text-2xl lg:text-3xl text-sky-700 font-bold text-center md:text-left mt-2">

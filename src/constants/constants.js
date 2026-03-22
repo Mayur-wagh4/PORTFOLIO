@@ -4,6 +4,7 @@ import {
   CICD,
   EDULEEM,
   G4G,
+  EC,
   GETTOHIRE,
   GTH,
   PORTFOLIO,
@@ -30,7 +31,7 @@ export const navLinks = [
 export const certifications = [
   {
     title: "DevOps Training",
-    organization: "Besant Technologies",
+    organization: "Besant Technologies, Bengaluru",
     issueDate: "Nov 2024",
     credentialId: "BDZ119640",
     credentialLink: "#",
@@ -46,8 +47,8 @@ export const certifications = [
     ],
   },
   {
-    title: "AWS Solution Architect Associate",
-    organization: "Eduleem School Of Design & IT",
+    title: "AWS Certified Solutions Architect – Associate",
+    organization: "Eduleem School of IT, Bengaluru",
     issueDate: "Aug 2024",
     credentialLink: "#",
     image: EDULEEM,
@@ -62,7 +63,7 @@ export const certifications = [
     ],
   },
   {
-    title: "Microsoft Certified Azure Fundamentals",
+    title: "Microsoft Certified: Azure Fundamentals",
     organization: "Microsoft",
     issueDate: "Mar 2022",
     credentialId: "RP4X-4TVv",
@@ -105,16 +106,17 @@ const experiences = [
   {
     title: "DevOps Engineer",
     company_name: "Experience Commerce",
-    icon: GTH,
+    icon: EC,
     iconBg: "#383E56",
-    date: "June 2025 - Present",
+    date: "June 2025 – Present (9 mos)",
     points: [
-      "Orchestrated zero-downtime production migration of 30+ servers and 5+ databases from Alibaba Cloud to AWS, serving a multi-tenant e-commerce platform with 100K+ daily transactions.",
-      "Architected and deployed self-hosted GitLab infrastructure supporting 10+ development teams with 20+ automated CI/CD pipelines, reducing deployment cycles from 2 hours to 15 minutes (87.5% improvement).",
-      "Engineered comprehensive observability stack using Prometheus and Grafana across 40+ production servers with 50+ intelligent alerts, achieving proactive incident detection and 99.9% uptime SLA.",
-      "Optimized cloud infrastructure costs by 30% through strategic EC2 rightsizing, autoscaling policies, and intelligent S3 lifecycle management of 500GB+ datasets.",
-      "Implemented enterprise-grade security architecture including IAM role-based access, VPC network segmentation, WAF rules, and managed 25+ SSL/TLS certificates across multiple domains.",
-      "Containerized 15+ legacy applications using Docker and Nginx, standardizing deployment patterns and enabling horizontal scaling capabilities.",
+      "Migrated 40+ servers & 5+ databases from Alibaba Cloud to AWS using a controlled cutover approach, leveraging cross-account IAM roles and dedicated AWS organisation accounts per environment to ensure isolation, security, and zero-downtime transition.",
+      "Set up AWS EKS; deployed workloads via Helm (Deployments, Services, Ingress); enforced RBAC + Network Policies for namespace isolation and least-privilege access.",
+      "Architected self-hosted GitLab CI/CD for 10+ teams with Trivy image scanning — cut deployment cycles from 2 hrs to 15 mins (87.5% faster).",
+      "Built observability stack (Zabbix, Datadog, Prometheus + Grafana) across 40+ servers with 50+ alerts — 99.9% uptime SLA and proactive incident detection.",
+      "Containerised 15+ legacy apps (.NET, PHP, Drupal) with Docker + Nginx; deployed ASG + ALB + WAF for autoscaling and traffic security.",
+      "Cut cloud costs 40% via EC2 rightsizing, ASG policies & S3 lifecycle rules; all environments provisioned with Terraform + Ansible.",
+      "🏆 Rising Star of the Quarter — Oct–Dec 2025 | Recognised for Alibaba→AWS migration delivery, GitLab DevSecOps rollout, and cross-team impact.",
     ],
   },
   {
@@ -122,14 +124,13 @@ const experiences = [
     company_name: "GetToHire.com",
     icon: GTH,
     iconBg: "#383E56",
-    date: "June 2023 - April 2025",
+    date: "June 2023 – April 2025 (22 mos)",
     points: [
-      "Managed production AWS infrastructure supporting high-traffic microservices architecture, maintaining 99.9% uptime and handling 50K+ concurrent users.",
-      "Built and maintained 15+ production CI/CD pipelines using Jenkins, Docker, and GitHub Actions, reducing deployment time by 70% and enabling daily releases.",
-      "Implemented Infrastructure as Code using Terraform and Ansible, automating provisioning of 50+ EC2 instances and reducing manual configuration effort by 50%.",
-      "Deployed and scaled containerized workloads on AWS EKS, managing 20+ microservices with auto-scaling, load balancing, and service mesh integration.",
-      "Established comprehensive monitoring and logging infrastructure using Prometheus, Grafana, and ELK Stack, reducing MTTR by 40%.",
-      "Hardened cloud security posture through IAM policies, Security Groups, AWS WAF, SSL/TLS implementation, and regular compliance audits.",
+      "Maintained production AWS infra (EC2, S3, RDS, VPC, CloudFront) — 99.9% uptime serving 50K+ concurrent users.",
+      "Migrated source code to self-hosted GitLab; built GitLab CI/CD pipelines — deployment time reduced 70%, enabling daily releases.",
+      "Terraform IaC for dev & staging — provisioned EC2, S3, RDS, VPC, subnets; Certbot automated SSL/TLS across multiple subdomains.",
+      "Set up Zabbix + Uptime Kuma monitoring & alerting; CloudFront + S3 CDN for static assets; EC2 Security Group hardening across all environments.",
+      "Prometheus + Grafana + ELK observability — MTTR reduced 40%; managed Route 53 DNS & subdomain config for 10+ projects.",
     ],
   },
   {
@@ -137,60 +138,94 @@ const experiences = [
     company_name: "GetToHire.com",
     icon: GTH,
     iconBg: "#383E56",
-    date: "Feb 2023 - May 2023",
+    date: "Feb 2023 – May 2023 (4 mos)",
     points: [
-      "Developed automated CI/CD pipelines for microservices deployment, integrating code quality checks and security scanning.",
-      "Containerized applications using Docker and deployed to AWS ECS and EKS environments with automated rollback capabilities.",
-      "Implemented cloud monitoring solutions using CloudWatch, Prometheus, and ELK Stack for real-time performance tracking.",
-      "Created Terraform modules for provisioning AWS resources including EC2, S3, RDS, and VPC networking components.",
-      "Enhanced infrastructure security through IAM policy design, Security Group configuration, and AWS WAF rule implementation.",
+      "Gained hands-on exposure to EC2, S3, RDS, VPC, IAM, Route 53 — deployed applications on EC2 with Security Groups, IAM roles, and basic networking; set up Zabbix monitoring with alerts.",
+      "Learned Git + GitLab for version control and CI/CD workflows; practised Docker containerisation — built images, managed containers, and understood application deployment workflows.",
     ],
   },
 ];
-const Skills = [
-  // Cloud Platforms & Architecture
-  { name: "AWS", level: "expert", category: "Cloud" },
-  { name: "Alibaba Cloud", level: "expert", category: "Cloud" },
-  { name: "Multi-Cloud Strategy", level: "expert", category: "Cloud" },
-  { name: "Cloud Migration", level: "expert", category: "Cloud" },
-  { name: "Cost Optimization", level: "expert", category: "Cloud" },
 
-  // Container & Orchestration
+export const education = [
+  {
+    degree: "Bachelor of Engineering (Computer Engineering)",
+    institution: "Sinhagad Institute of Technology, Pune",
+    cgpa: "8.5/10",
+    graduatedDate: "July 2023",
+  },
+];
+
+const Skills = [
+  // Cloud (AWS)
+  { name: "EC2", level: "expert", category: "Cloud" },
+  { name: "S3", level: "expert", category: "Cloud" },
+  { name: "RDS", level: "expert", category: "Cloud" },
+  { name: "VPC", level: "expert", category: "Cloud" },
+  { name: "IAM", level: "expert", category: "Cloud" },
+  { name: "CloudFront", level: "intermediate", category: "Cloud" },
+  { name: "CloudWatch", level: "intermediate", category: "Cloud" },
+  { name: "WAF", level: "intermediate", category: "Cloud" },
+  { name: "SQS", level: "intermediate", category: "Cloud" },
+  { name: "Lambda", level: "intermediate", category: "Cloud" },
+
+  // Containers & Kubernetes
   { name: "Docker", level: "expert", category: "Container" },
   { name: "Kubernetes", level: "expert", category: "Container" },
-  { name: "AWS EKS", level: "expert", category: "Container" },
+  { name: "RBAC", level: "expert", category: "Container" },
+  { name: "Network Policies", level: "intermediate", category: "Container" },
+  { name: "HPA", level: "intermediate", category: "Container" },
+  { name: "StatefulSets", level: "intermediate", category: "Container" },
+  { name: "Ingress", level: "intermediate", category: "Container" },
   { name: "Helm", level: "intermediate", category: "Container" },
-  { name: "Service Mesh", level: "intermediate", category: "Container" },
+  { name: "EKS", level: "expert", category: "Container" },
 
-  // Infrastructure as Code
-  { name: "Terraform", level: "expert", category: "IaC" },
-  { name: "Ansible", level: "intermediate", category: "IaC" },
-  { name: "CloudFormation", level: "intermediate", category: "IaC" },
-
-  // CI/CD & GitOps
-  { name: "GitLab CI/CD", level: "expert", category: "CI/CD" },
+  // CI/CD & DevSecOps
   { name: "Jenkins", level: "expert", category: "CI/CD" },
+  { name: "GitLab CI", level: "expert", category: "CI/CD" },
   { name: "GitHub Actions", level: "intermediate", category: "CI/CD" },
-  { name: "ArgoCD", level: "intermediate", category: "CI/CD" },
+  { name: "Trivy", level: "intermediate", category: "CI/CD" },
+  { name: "OWASP ZAP", level: "intermediate", category: "CI/CD" },
+  { name: "Security Scanning", level: "intermediate", category: "CI/CD" },
+  { name: "Security Gates", level: "intermediate", category: "CI/CD" },
 
-  // Monitoring & Observability
+  // Monitoring
   { name: "Prometheus", level: "expert", category: "Monitoring" },
   { name: "Grafana", level: "expert", category: "Monitoring" },
+  { name: "Datadog", level: "intermediate", category: "Monitoring" },
   { name: "ELK Stack", level: "intermediate", category: "Monitoring" },
   { name: "CloudWatch", level: "intermediate", category: "Monitoring" },
+  { name: "Alertmanager", level: "intermediate", category: "Monitoring" },
 
-  // Security & Compliance
-  { name: "IAM & RBAC", level: "expert", category: "Security" },
+  // IaC & Scripting
+  { name: "Terraform", level: "expert", category: "IaC" },
+  { name: "Ansible", level: "intermediate", category: "IaC" },
+  { name: "Bash", level: "expert", category: "IaC" },
+  { name: "Shell", level: "expert", category: "IaC" },
+  { name: "Python", level: "intermediate", category: "IaC" },
+  { name: "YAML", level: "expert", category: "IaC" },
+  { name: "JSON", level: "expert", category: "IaC" },
+
+  // Databases
+  { name: "PostgreSQL", level: "intermediate", category: "Database" },
+  { name: "MySQL", level: "intermediate", category: "Database" },
+  { name: "MongoDB", level: "intermediate", category: "Database" },
+  { name: "RDS", level: "intermediate", category: "Database" },
+
+  // Security & Networking
+  { name: "IAM", level: "expert", category: "Security" },
+  { name: "RBAC", level: "expert", category: "Security" },
+  { name: "Network Policies", level: "intermediate", category: "Security" },
+  { name: "VPC", level: "expert", category: "Security" },
   { name: "SSL/TLS", level: "expert", category: "Security" },
-  { name: "AWS WAF", level: "intermediate", category: "Security" },
-  { name: "Security Hardening", level: "expert", category: "Security" },
-
-  // Automation
-  { name: "Python", level: "intermediate", category: "Automation" },
-  { name: "Bash/Shell", level: "expert", category: "Automation" },
-  { name: "Git", level: "expert", category: "Automation" },
+  { name: "WAF", level: "intermediate", category: "Security" },
+  { name: "VPN", level: "intermediate", category: "Security" },
+  { name: "Firewalls", level: "intermediate", category: "Security" },
+  { name: "Nginx", level: "expert", category: "Security" },
+  { name: "Linux", level: "expert", category: "Security" },
 ];
-const projects = [
+
+
+ const projects = [
   {
     name: "Enterprise Multi-Cloud Migration Platform",
     description:
@@ -250,21 +285,6 @@ const projects = [
     image: kubernetes,
     source_code_link: "https://github.com/Mayur-wagh4/aiops-self-healing-k8s",
     website_link: "https://github.com/Mayur-wagh4/aiops-self-healing-k8s",
-  },
-  {
-    name: "Cost Optimization & FinOps Platform",
-    description:
-      "Automated cloud cost optimization system that reduced infrastructure spend by 30% through intelligent EC2 rightsizing, autoscaling optimization, S3 lifecycle policies, and real-time cost anomaly detection.",
-    tags: [
-      { name: "FinOps", color: "blue-text-gradient" },
-      { name: "AWS", color: "purple-text-gradient" },
-      { name: "Cost Optimization", color: "orange-text-gradient" },
-      { name: "Automation", color: "green-text-gradient" },
-      { name: "Analytics", color: "pink-text-gradient" },
-    ],
-    image: aws,
-    source_code_link: "#",
-    website_link: "#",
   },
   {
     name: "Predictive Auto-Scaling using AIOps",

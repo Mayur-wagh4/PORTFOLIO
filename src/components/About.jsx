@@ -55,32 +55,26 @@ const About = () => {
           <div className="absolute left-0 top-0 h-full w-1 rounded-l-2xl bg-gradient-to-b from-purple-600 to-sky-600" />
 
           <p className="text-slate-700 text-base sm:text-lg leading-relaxed max-w-4xl">
-            I’m <strong>Mayur Prakash Wagh</strong>, a DevOps Engineer with
-            proven experience in designing, migrating, and operating
-            <strong> large-scale production cloud platforms</strong>.
-            My expertise spans AWS, Kubernetes, CI/CD automation,
-            observability, and infrastructure security.
-            <br /><br />
-            At <strong>Experience Commerce</strong>, I led a
-            <strong> zero-downtime migration of 30+ servers and 5+ databases</strong>
-            from Alibaba Cloud to AWS for a multi-tenant e-commerce platform
-            processing <strong>100K+ daily transactions</strong>. I designed a
-            self-hosted <strong>GitLab CI/CD ecosystem</strong> supporting
-            multiple teams, reducing deployment cycles from hours to minutes
-            while maintaining <strong>99.9% uptime SLA</strong>.
-            <br /><br />
-            Previously at <strong>GetToHire.com</strong>, I managed
-            production AWS infrastructure supporting
-            <strong> 50K+ concurrent users</strong>. I implemented
-            Infrastructure as Code using Terraform and Ansible, deployed
-            microservices on EKS, reduced cloud costs by up to
-            <strong> 30%</strong>, and enforced strong security practices
-            using IAM, VPC segmentation, WAF, and SSL/TLS.
-            <br /><br />
-            I focus on building <strong>secure, scalable, and cost-efficient
-            systems</strong> that enable rapid engineering velocity while
-            ensuring reliability and compliance at scale.
-          </p>
+  I'm <strong>Mayur Prakash Wagh</strong>, a DevOps Engineer with 3 years of
+  production experience in <strong>AWS, Kubernetes (EKS), and DevSecOps</strong> —
+  awarded <strong>Rising Star of the Quarter (Oct–Dec 2025)</strong> for
+  cross-team impact and delivery.
+  <br /><br />
+  At <strong>Experience Commerce</strong>, I led a <strong>zero-downtime
+  migration of 40+ servers and 5+ databases</strong> from Alibaba Cloud to AWS,
+  architected a self-hosted <strong>GitLab CI/CD platform</strong> for 10+ teams
+  with Trivy security scanning — cutting deployment cycles by <strong>87.5%</strong>,
+  and built an observability stack across 40+ servers achieving
+  <strong> 99.9% uptime SLA</strong> and <strong>40% cloud cost reduction</strong>.
+  <br /><br />
+  Previously at <strong>GetToHire.com</strong>, I maintained production AWS
+  infrastructure serving <strong>50K+ concurrent users</strong>, built GitLab
+  CI/CD pipelines reducing deployment time by <strong>70%</strong>, and set up
+  Prometheus + Grafana + ELK observability cutting MTTR by <strong>40%</strong>.
+  <br /><br />
+  I build <strong>secure, scalable, and cost-efficient infrastructure</strong>
+  that enables engineering teams to ship fast without compromising reliability.
+</p>
         </div>
 
         {/* Service Cards */}
