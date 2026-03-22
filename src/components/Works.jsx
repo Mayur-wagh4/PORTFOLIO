@@ -100,12 +100,11 @@ const Works = () => {
               </div>
 
               {/* Tags */}
-              <div className="flex flex-wrap gap-2 mt-3">
+              <div className="flex flex-wrap gap-2   mt-3">
                 {project.tags.slice(0, 6).map(tag => (
                   <span
                     key={tag.name}
-                    className="px-2.5 py-1 text-xs rounded-md border border-slate-200 bg-slate-50 text-slate-700"
-                  >
+                    className="px-2.5 py-1 text-xs rounded-md border border-sky-200 bg-gradient-to-r from-sky-50 to-indigo-50 text-indigo-600"                  >
                     {tag.name}
                   </span>
                 ))}
